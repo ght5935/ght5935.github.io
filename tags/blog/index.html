@@ -640,10 +640,19 @@
                 </a>
                 
                 
+                <a href="/tags/cookie/" title="cookie: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="cookie" style="background-color: #F5EEF8;">cookie
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/blog/" title="blog: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            data-tagname="blog" style="background-color: #F5EEF8;">blog
+                            data-tagname="blog" style="background-color: #D5F5E3;">blog
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -652,17 +661,8 @@
                 <a href="/tags/hexo/" title="hexo: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="hexo" style="background-color: #D5F5E3;">hexo
+                            data-tagname="hexo" style="background-color: #E8F8F5;">hexo
                         <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/cookie/" title="cookie: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="cookie" style="background-color: #E8F8F5;">cookie
-                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -730,10 +730,19 @@
                 </a>
                 
                 
+                <a href="/tags/node/" title="node: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="node" style="background-color: #F9E79F;">node
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/每日一题/" title="每日一题: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="每日一题" style="background-color: #F9E79F;">每日一题
+                            data-tagname="每日一题" style="background-color: #F8F9F9;">每日一题
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -748,10 +757,10 @@
                 </a>
                 
                 
-                <a href="/tags/node/" title="node: 1">
+                <a href="/tags/webpack/" title="webpack: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="node" style="background-color: #F8F9F9;">node
+                            data-tagname="webpack" style="background-color: #85C1E9;">webpack
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -814,7 +823,7 @@
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">21k</span>&nbsp;字
+                class="white-color">29.1k</span>&nbsp;字
             
             
             
@@ -990,9 +999,15 @@ $(function () {
         }) 
     </script>
 
-    <!-- 鼠标滑过 -->
+    <!-- 鼠标滑过/ mac不支持 -->
     
-        <script type="text/javascript" src="/js/mouseSlip.js"></script>
+    <script type="text/javascript">
+        var agent = navigator.userAgent.toLowerCase();
+        var isMac = /macintosh|mac os x/i.test(navigator.userAgent);
+        if (!isMac) {
+            document.write('<script type="text/javascript" src="/js/mouseSlip.js"><"/"script>')
+        }
+    </script>
     
 
     <!-- 在线聊天工具  -->

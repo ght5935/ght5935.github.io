@@ -1666,7 +1666,7 @@ IE会首先加载整个HTML文档的DOM，然后再导入外部的css文件。�
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">21k</span>&nbsp;字
+                class="white-color">29.1k</span>&nbsp;字
             
             
             
@@ -1842,9 +1842,15 @@ $(function () {
         }) 
     </script>
 
-    <!-- 鼠标滑过 -->
+    <!-- 鼠标滑过/ mac不支持 -->
     
-        <script type="text/javascript" src="/js/mouseSlip.js"></script>
+    <script type="text/javascript">
+        var agent = navigator.userAgent.toLowerCase();
+        var isMac = /macintosh|mac os x/i.test(navigator.userAgent);
+        if (!isMac) {
+            document.write('<script type="text/javascript" src="/js/mouseSlip.js"><"/"script>')
+        }
+    </script>
     
 
     <!-- 在线聊天工具  -->

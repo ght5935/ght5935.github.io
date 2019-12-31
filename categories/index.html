@@ -650,19 +650,28 @@
                 </a>
                 
                 
+                <a href="/categories/Js/" title="Js: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D5F5E3;">Js
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/categories/hexo/" title="hexo: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">hexo
+                            style="background-color: #E8F8F5;">hexo
                         <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Js/" title="Js: 1">
+                <a href="/categories/碎碎念/" title="碎碎念: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #E8F8F5;">Js
+                            style="background-color: #FEF9E7;">碎碎念
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -671,17 +680,8 @@
                 <a href="/categories/每日一题/" title="每日一题: 4">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #FEF9E7;">每日一题
+                            style="background-color: #F8F9F9;">每日一题
                         <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/碎碎念/" title="碎碎念: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F8F9F9;">碎碎念
-                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -695,19 +695,28 @@
                 </a>
                 
                 
-                <a href="/categories/移动端/" title="移动端: 1">
+                <a href="/categories/node/" title="node: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D7BDE2;">移动端
+                            style="background-color: #D7BDE2;">node
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/node/" title="node: 1">
+                <a href="/categories/移动端/" title="移动端: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #A3E4D7;">node
+                            style="background-color: #A3E4D7;">移动端
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/面试题/" title="面试题: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #85C1E9;">面试题
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -754,7 +763,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"特效demo","max":5},{"name":"app","max":5},{"name":"hexo","max":5},{"name":"Js","max":5},{"name":"每日一题","max":5},{"name":"碎碎念","max":5},{"name":"js","max":5},{"name":"移动端","max":5},{"name":"node","max":5}],
+            indicator: [{"name":"特效demo","max":5},{"name":"app","max":5},{"name":"Js","max":5},{"name":"hexo","max":5},{"name":"碎碎念","max":5},{"name":"每日一题","max":5},{"name":"js","max":5},{"name":"node","max":5},{"name":"移动端","max":5},{"name":"面试题","max":5}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -765,7 +774,7 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [1,1,2,1,4,1,3,1,1],
+                    value : [1,1,1,2,1,4,3,1,1,1],
                     name : '文章分类数量'
                 }
             ]
@@ -788,7 +797,7 @@
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">21k</span>&nbsp;字
+                class="white-color">29.1k</span>&nbsp;字
             
             
             
@@ -964,9 +973,15 @@ $(function () {
         }) 
     </script>
 
-    <!-- 鼠标滑过 -->
+    <!-- 鼠标滑过/ mac不支持 -->
     
-        <script type="text/javascript" src="/js/mouseSlip.js"></script>
+    <script type="text/javascript">
+        var agent = navigator.userAgent.toLowerCase();
+        var isMac = /macintosh|mac os x/i.test(navigator.userAgent);
+        if (!isMac) {
+            document.write('<script type="text/javascript" src="/js/mouseSlip.js"><"/"script>')
+        }
+    </script>
     
 
     <!-- 在线聊天工具  -->
