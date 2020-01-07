@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="movies, echo丶若梦">
-    <meta name="description" content="movies | echo丶若梦">
+    <meta name="keywords" content="标签: promise, echo丶若梦">
+    <meta name="description" content="标签: promise | echo丶若梦">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>movies | echo丶若梦</title>
+    <title>标签: promise | echo丶若梦</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -617,336 +617,220 @@
 
     </div>
 </div>
-<style>
-    .movies-container {
-        margin-top: -100px;
-        margin-bottom: 30px;
-    }
-
-    .movies-container .tag-title {
-        margin-bottom: 10px;
-        color: #3C4858;
-        font-size: 1.75rem;
-        font-weight: 400;
-    }
-
-
-    /* 一下是按钮样式 */
-
-    .movie-ship {
-        padding: 10px 20px;
-    }
-
-    .movie-ship .title {
-        display: flex;
-        align-items: center;
-    }
-
-    .movie-ship .title div {
-        color: #fff;
-        padding-left: 10px;
-    }
-
-    .movie-ship .title img {
-        width: 110px;
-        height: 130px;
-        flex-shrink: 0;
-    }
-
-    .movies-all .tag-post {
-        margin-bottom: 30px;
-    }
-    .movie-name {
-        font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        text-decoration: none;
-        display: inline-block;
-        line-height: 40px;
-        height: 40px;
-        color: #fff;
-        font-size: 1.6rem;
-        margin: 0;
-        cursor: pointer;
-        border: none;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        -webkit-transition-property: all;
-        transition-property: all;
-        -webkit-transition-duration: .3s;
-        transition-duration: .3s;
-        background: radial-gradient(black, transparent);
-    }
-
-    .title {
-        margin-bottom: 0rem !important;
-    }
-
-    .card {
-        margin: 3rem 0 1rem 0 !important;
-    }
-
-    .movie-glow.movie-caution {
-        -webkit-animation-name: glowing-caution;
-        animation-name: glowing-caution;
-    }
-
-    @-webkit-keyframes glowing-caution {
-        from {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-
-        50% {
-            -webkit-box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-            box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-        }
-
-        to {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-    }
-
-    @keyframes glowing-caution {
-        from {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-
-        50% {
-            -webkit-box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-            box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-        }
-
-        to {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-    }
-
-    .movie-caution:hover {
-        border-color: #ff7680;
-        color: #FFF;
-        text-decoration: none;
-    }
-
-    .movie-card1 {
-        background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-    }
-
-    .movie-card2 {
-        background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
-
-    .movie-card3 {
-        background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
-    }
-
-    .movie-card4 {
-        background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
-    }
-
-    .movie-card5 {
-        background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
-    }
-
-    .movie-card6 {
-        background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
-    }
-
-    .movie-card7 {
-        background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
-    }
-
-    .movie-card8 {
-        background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
-    }
-
-    .movie-card9 {
-        background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
-    }
-
-    .movie-card10 {
-        background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
-    }
-
-    article .card {
-        overflow: visible !important;
-    }
-</style>
 
 <main class="content">
-    <div class="container movies-container">
-        <div class="card">
-            <div class="card-content">
-                <div class="tag-title center-align">
-                    <i class="fa fa-film"></i>&nbsp;&nbsp;我的影音
-                </div>
-                <article id="movies-link">
-                    
-                    
-                    <div class="row tags-posts movies-all">
-                        
-                        
-                        <div class="movies-div" data-aos="">
-                            <div class="card movie-card1">
-                                <div class="movie-ship">
-                                    <div class="title">
-                                        <img src="/medias/data/movies/p2395733377.jpg" alt="img">
-                                        <div>
-                                            <p>
-                                                <a href="https://movie.douban.com/subject/26683290/" target="_blank"
-                                                    class="movie-name movie-glow movie-caution">
-                                                    你的名字
-                                                </a>
-                                            </p>
-                                            <p> 剧情 / 爱情 / 动画 </p>
-                                            <p>在远离大都会的小山村，住着巫女世家出身的高中女孩宫水三叶（上白石萌音 配音）。校园和家庭的原因本就让她充满烦恼，而近一段时间发生的奇怪事件，又让三叶摸不清头脑...</p>
-                                        </div>
-                                    </div>
 
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="movies-div" data-aos="">
-                            <div class="card movie-card2">
-                                <div class="movie-ship">
-                                    <div class="title">
-                                        <img src="/medias/data/movies/b157104701.jpg" alt="img">
-                                        <div>
-                                            <p>
-                                                <a href="https://movie.douban.com/subject/2124724/" target="_blank"
-                                                    class="movie-name movie-glow movie-caution">
-                                                    不能说的秘密
-                                                </a>
-                                            </p>
-                                            <p> 爱情 / 音乐 / 奇幻 </p>
-                                            <p>叶湘伦（周杰伦 饰）是淡江艺术高中的一名插班生，父亲（黄秋生 饰）是该校的一名教师。这天同学晴依（曾恺玹 饰）带他参观学校...</p>
-                                        </div>
-                                    </div>
+    
 
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="movies-div" data-aos="">
-                            <div class="card movie-card3">
-                                <div class="movie-ship">
-                                    <div class="title">
-                                        <img src="/medias/data/movies/1571046698.jpg" alt="img">
-                                        <div>
-                                            <p>
-                                                <a href="https://movie.douban.com/subject/26363254/" target="_blank"
-                                                    class="movie-name movie-glow movie-caution">
-                                                    战狼2 (2017)
-                                                </a>
-                                            </p>
-                                            <p> 动作 / 战争 </p>
-                                            <p>由于一怒杀害了强拆牺牲战友房子的恶霸，屡立功勋的冷锋（吴京 饰）受到军事法庭的判决。在押期间，亲密爱人龙小云壮烈牺牲，冷锋辗转来到非洲...</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="movies-div" data-aos="">
-                            <div class="card movie-card4">
-                                <div class="movie-ship">
-                                    <div class="title">
-                                        <img src="/medias/data/movies/p457760035.jpg" alt="img">
-                                        <div>
-                                            <p>
-                                                <a href="https://movie.douban.com/subject/1292722/" target="_blank"
-                                                    class="movie-name movie-glow movie-caution">
-                                                    泰坦尼克号
-                                                </a>
-                                            </p>
-                                            <p> 剧情 / 爱情 / 灾难 </p>
-                                            <p>1912年4月14日，星期天晚上，一个风平浪静的夜晚。泰坦尼克号撞上了冰山，“永不沉没的”泰坦尼克号面临沉船的命运，罗丝和杰克刚萌芽的爱情也将经历生死的考验...</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="movies-div" data-aos="">
-                            <div class="card movie-card5">
-                                <div class="movie-ship">
-                                    <div class="title">
-                                        <img src="/medias/data/movies/p1446261379.jpg" alt="img">
-                                        <div>
-                                            <p>
-                                                <a href="https://movie.douban.com/subject/1291583/" target="_blank"
-                                                    class="movie-name movie-glow movie-caution">
-                                                    天空之城
-                                                </a>
-                                            </p>
-                                            <p> 动画 / 奇幻 / 冒险 </p>
-                                            <p>古老帝国拉比达是一座漂浮在空中的巨大的机器岛，传说那里已经无人居住，蕴藏着巨大的财富。因此，无论军方还是海盗，都在找寻着这座传说中的飞行岛...</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    
-                </article>
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fa fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/Demo/" title="Demo: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Demo" style="background-color: #F9EBEA;">Demo
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/cookie/" title="cookie: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="cookie" style="background-color: #F5EEF8;">cookie
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/blog/" title="blog: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="blog" style="background-color: #D5F5E3;">blog
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/hexo/" title="hexo: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="hexo" style="background-color: #E8F8F5;">hexo
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/linux/" title="linux: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="linux" style="background-color: #FEF9E7;">linux
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/day/" title="day: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="day" style="background-color: #F8F9F9;">day
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/js/" title="js: 5">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="js" style="background-color: #82E0AA;">js
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/react/" title="react: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="react" style="background-color: #D7BDE2;">react
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/vue/" title="vue: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="vue" style="background-color: #A3E4D7;">vue
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/ES9/" title="ES9: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="ES9" style="background-color: #85C1E9;">ES9
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Event-Loop/" title="Event Loop: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Event Loop" style="background-color: #F8C471;">Event Loop
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/css/" title="css: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="css" style="background-color: #F9E79F;">css
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/每日一题/" title="每日一题: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="每日一题" style="background-color: #F8F9F9;">每日一题
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/promise/" title="promise: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="promise" style="background-color: #F9E79F;">promise
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/移动端/" title="移动端: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="移动端" style="background-color: #E8F8F5;">移动端
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/node/" title="node: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="node" style="background-color: #F8F9F9;">node
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/webpack/" title="webpack: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="webpack" style="background-color: #85C1E9;">webpack
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
             </div>
         </div>
-        <div class="card">
-
-            
-            <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
-<link rel="stylesheet" href="/css/my-gitalk.css">
-
-<div class="card gitalk-card" data-aos="fade-up">
-    <div id="gitalk-container" class="card-content"></div>
+    </div>
 </div>
 
-<script src="/libs/gitalk/gitalk.min.js"></script>
-<script>
-    let gitalk = new Gitalk({
-        clientID: 'f0788a2aa0c694ad6a38',
-        clientSecret: 'b70e8073f70d6fc00e946a1ca031eba02e38dd5a',
-        repo: 'ght5935.github.io',
-        owner: 'ght5935',
-        admin: "ght5935",
-        id: '2019-10-08T14-01-49',
-        distractionFreeMode: false  // Facebook-like distraction free mode
-    });
+    
 
-    gitalk.render('gitalk-container');
-</script>
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
             
-
             
-
+            <div class="article tag-post col s12 m6 l4" data-tags="promise" data-aos="fade-up">
+                <div class="card">
+                    <a href="/2020/01/07/t-1/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="红绿灯不断交替重复亮灯">
+                            
+                            <span class="card-title">红绿灯不断交替重复亮灯</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-07
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/每日一题/" class="post-category">
+                                    每日一题
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-
-            
-
-            
-
         </div>
-    </div>
+    </article>
 </main>
 
-<script>
-    $(function () {
-        $('#movies-link').masonry({
-            itemSelector: '.movies-div'
-        });
-    });
-</script>
+
+
 
     <footer class="page-footer bg-color">
     <div class="container row center-align">

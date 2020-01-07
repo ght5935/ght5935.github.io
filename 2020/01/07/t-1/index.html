@@ -4,9 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ES2019 的新特性, echo丶若梦">
-    <meta name="description" content="JavaScript 不断演变，每次迭代都会得到一些新的内部更新。让我们来看看 ES2019 有哪些新的特性，并加入到我们日常开发中:
-Array.prototype.flat()Array.prototype.flat() 递归地将嵌套数">
+    <meta name="keywords" content="红绿灯不断交替重复亮灯, echo丶若梦">
+    <meta name="description" content="红灯三秒亮一次，绿灯一秒亮一次，黄灯2秒亮一次；如何让三个灯不断交替重复亮灯 ？
+function red(){
+    console.log(&#39;red&#39;);
+}
+function green(){
+    console.log(&#39;gr">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +18,7 @@ Array.prototype.flat()Array.prototype.flat() 递归地将嵌套数">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ES2019 的新特性 | echo丶若梦</title>
+    <title>红绿灯不断交替重复亮灯 | echo丶若梦</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -601,13 +605,13 @@ Array.prototype.flat()Array.prototype.flat() 递归地将嵌套数">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        ES2019 的新特性
+                        红绿灯不断交替重复亮灯
                     </div>
                 </div>
             </div>
@@ -719,12 +723,8 @@ Array.prototype.flat()Array.prototype.flat() 递归地将嵌套数">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/js/">
-                                <span class="chip bg-color">js</span>
-                            </a>
-                        
-                            <a href="/tags/ES9/">
-                                <span class="chip bg-color">ES9</span>
+                            <a href="/tags/promise/">
+                                <span class="chip bg-color">promise</span>
                             </a>
                         
                     </div>
@@ -732,27 +732,36 @@ Array.prototype.flat()Array.prototype.flat() 递归地将嵌套数">
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/每日一题/" class="post-category">
+                                每日一题
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-06
+                    2020-01-07
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        849
+                        93
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        1 分
                     </div>
                     
                 
@@ -768,94 +777,39 @@ Array.prototype.flat()Array.prototype.flat() 递归地将嵌套数">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>JavaScript 不断演变，每次迭代都会得到一些新的内部更新。让我们来看看 ES2019 有哪些新的特性，并加入到我们日常开发中:</p>
-<h2 id="Array-prototype-flat"><a href="#Array-prototype-flat" class="headerlink" title="Array.prototype.flat()"></a>Array.prototype.flat()</h2><p><code>Array.prototype.flat()</code> 递归地将嵌套数组拼合到指定深度。默认值为 1，如果要全深度则使用 Infinity 。此方法不会修改原始数组，但会创建一个新数组:</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-arr1<span class="token punctuation">.</span><span class="token function">flat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token comment" spellcheck="true">// [1, 2, 3, 4]</span>
-
-<span class="token keyword">const</span> arr2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-arr2<span class="token punctuation">.</span><span class="token function">flat</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token comment" spellcheck="true">// [1, 2, 3, 4, 5, 6]</span>
-
-<span class="token keyword">const</span> arr3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-arr3<span class="token punctuation">.</span><span class="token function">flat</span><span class="token punctuation">(</span><span class="token number">Infinity</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token comment" spellcheck="true">// [1, 2, 3, 4, 5, 6, 7, 8]</span></code></pre>
-<p>flat() 方法会移除数组中的空项:</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> arr4 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-arr4<span class="token punctuation">.</span><span class="token function">flat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// [1, 2, 4, 5]</span></code></pre>
-<h2 id="Array-prototype-flatMap"><a href="#Array-prototype-flatMap" class="headerlink" title="Array.prototype.flatMap()"></a>Array.prototype.flatMap()</h2><p><code>flatMap()</code> 方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。它与 <code>Array.prototype.map</code> 和 深度值为 1的 <code>Array.prototype.flat</code> 几乎相同，但 flatMap 通常在合并成一种方法的效率稍微高一些。</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-arr1<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span> v <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span>v<span class="token operator">*</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// [ [4], [8], [12] ]</span>
-
-arr1<span class="token punctuation">.</span><span class="token function">flatMap</span><span class="token punctuation">(</span> v <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span>v<span class="token operator">*</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// [4, 8, 12]</span></code></pre>
-<p>更好的示例：</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> sentence <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"This is a"</span><span class="token punctuation">,</span> <span class="token string">"regular"</span><span class="token punctuation">,</span> <span class="token string">"sentence"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-
-sentence<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>x <span class="token operator">=</span><span class="token operator">></span> x<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token comment" spellcheck="true">// [["This","is","a"],["regular"],["sentence"]]</span>
-
-sentence<span class="token punctuation">.</span><span class="token function">flatMap</span><span class="token punctuation">(</span>x <span class="token operator">=</span><span class="token operator">></span> x<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token comment" spellcheck="true">// ["This","is","a","regular", "sentence"]</span>
-
-<span class="token comment" spellcheck="true">// 可以使用 归纳（reduce） 与 合并（concat）实现相同的功能</span>
-sentence<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>acc<span class="token punctuation">,</span> x<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> acc<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h2 id="String-prototype-trimStart-和-String-prototype-trimEnd"><a href="#String-prototype-trimStart-和-String-prototype-trimEnd" class="headerlink" title="String.prototype.trimStart() 和 String.prototype.trimEnd()"></a>String.prototype.trimStart() 和 String.prototype.trimEnd()</h2><p>除了能从字符串两端删除空白字符的 String.prototype.trim() 之外，现在还有单独的方法，只能从每一端删除空格:</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> test <span class="token operator">=</span> <span class="token string">" hello "</span><span class="token punctuation">;</span>
-
-test<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "hello";</span>
-test<span class="token punctuation">.</span><span class="token function">trimStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "hello ";</span>
-test<span class="token punctuation">.</span><span class="token function">trimEnd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// " hello";</span></code></pre>
-<blockquote>
-<ul>
-<li>trimStart() ：别名 trimLeft()，移除原字符串左端的连续空白符并返回，并不会直接修改原字符串本身。</li>
-<li>trimEnd() ：别名 trimRight()，移除原字符串右端的连续空白符并返回，并不会直接修改原字符串本身。</li>
-</ul>
-</blockquote>
-<h2 id="Object-fromEntries"><a href="#Object-fromEntries" class="headerlink" title="Object.fromEntries"></a>Object.fromEntries</h2><p>将键值对列表转换为 Object 的新方法。<br>它与已有 Object.entries() 正好相反，Object.entries()方法在将对象转换为数组时使用，它返回一个给定对象自身可枚举属性的键值对数组。<br>但现在您可以通过 Object.fromEntries 将操作的数组返回到对象中。<br>下面是一个示例（将所有对象属性的值平方）:</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> prop1<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> prop2<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> prop3<span class="token punctuation">:</span> <span class="token number">15</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">// 转化为键值对数组：</span>
-<span class="token keyword">let</span> array <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token comment" spellcheck="true">// [["prop1", 2], ["prop2", 10], ["prop3", 15]]</span></code></pre>
-<p>将所有对象属性的值平方:</p>
-<pre class=" language-js"><code class="language-js">array <span class="token operator">=</span> array<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">[</span>key<span class="token punctuation">,</span> value<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span>key<span class="token punctuation">,</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token comment" spellcheck="true">// [["prop1", 4], ["prop2", 100], ["prop3", 225]]</span></code></pre>
-<p>我们将转换后的数组 array 作为参数传入 Object.fromEntries ，将数组转换成了一个对象:</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> newObj <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">fromEntries</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token comment" spellcheck="true">// {prop1: 4, prop2: 100, prop3: 225}</span></code></pre>
-<h2 id="可选的-Catch-参数"><a href="#可选的-Catch-参数" class="headerlink" title="可选的 Catch 参数"></a>可选的 Catch 参数</h2><p>新提案允许您完全省略 catch() 参数，因为在许多情况下，您并不想使用它:</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">try</span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">//...</span>
-<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">er</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">//handle error with parameter er</span>
+                <p>红灯三秒亮一次，绿灯一秒亮一次，黄灯2秒亮一次；如何让三个灯不断交替重复亮灯 ？</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">red</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'red'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">green</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'green'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">yellow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'yellow'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">try</span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">//...</span>
-<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">//handle error without parameter</span>
-<span class="token punctuation">}</span></code></pre>
-<h2 id="Symbol-description"><a href="#Symbol-description" class="headerlink" title="Symbol.description"></a>Symbol.description</h2><p>description 是一个只读属性，它会返回 Symbol 对象的可选描述的字符串，用来代替 toString() 方法。</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> testSymbol <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">"Desc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> light <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>timmer<span class="token punctuation">,</span> cb<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">cb</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> timmer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-testSymbol<span class="token punctuation">.</span>description<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "Desc"</span>
+<span class="token keyword">var</span> step <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">light</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">,</span> red<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">light</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">,</span> green<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">light</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> yellow<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">step</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-testSymbol<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "Symbol(Desc)"</span></code></pre>
-<h2 id="Function-toString"><a href="#Function-toString" class="headerlink" title="Function.toString()"></a>Function.toString()</h2><p>现在,在函数上调用 toString() 会返回该函数（字符串形式），与它的定义完全一样，包括空格和注释。<br>之前：</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token comment" spellcheck="true">/* foo comment */</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-foo<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "function foo() {}"</span></code></pre>
-<p>现在：</p>
-<pre class=" language-js"><code class="language-js">foo<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "function </span><span class="token comment" spellcheck="true">/* foo comment */</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>"</code></pre>
-<h2 id="JSON-parse-改进"><a href="#JSON-parse-改进" class="headerlink" title="JSON.parse() 改进"></a>JSON.parse() 改进</h2><p>行分隔符 (\u2028) 和段落分隔符 (\u2029)，现在被正确解析，而不是报一个语法错误.</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'{"name":"Bottle\u2028AnGe"}'</span>
-JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">// {name: "Bottle</span>
-AnGe"<span class="token punctuation">}</span></code></pre>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p><a href="https://blog.tildeloop.com/posts/javascript-what%E2%80%99s-new-in-es2019" target="_blank" rel="noopener">原文链接</a></p>
+<span class="token function">step</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
             </div>
             <hr/>
@@ -1015,9 +969,9 @@ AnGe"<span class="token punctuation">}</span></code></pre>
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《ES2019 的新特性》
+                    《红绿灯不断交替重复亮灯》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/06/js-3/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/07/t-1/" property="cc:attributionName"
                rel="cc:attributionURL">
                 echo丶若梦
             </a> 采用
@@ -1058,7 +1012,7 @@ AnGe"<span class="token punctuation">}</span></code></pre>
         repo: 'ght5935.github.io',
         owner: 'ght5935',
         admin: "ght5935",
-        id: '2019-11-06T16-49-49',
+        id: '2020-01-07T14-02-03',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1079,86 +1033,34 @@ AnGe"<span class="token punctuation">}</span></code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/11/07/js-4/">
+                <a href="/2020/01/07/t-1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="宏任务/微任务">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="红绿灯不断交替重复亮灯">
                         
-                        <span class="card-title">宏任务/微任务</span>
+                        <span class="card-title">红绿灯不断交替重复亮灯</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            首先，JavaScript是一个单线程的脚本语言。
-微任务与宏任务的概念
-
-宏任务：当前调用栈中执行的代码成为宏任务。（主代码快，定时器等等）。
-
-
-
-
-微任务： 当前（此次事件循环中）宏任务执行完，在下一个宏任务开始之前需要执行的任务,可
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-07
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/js/" class="post-category">
-                                    js
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/js/">
-                        <span class="chip bg-color">js</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/10/25/js-2/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="js基础">
-                        
-                        <span class="card-title">js基础</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            document.load和document.ready的区别页面加载完成有两种事件
-load是当页面所有资源全部加载完成后（包括DOM文档树，css文件，js文件，图片资源等），执行一个函数问题：如果图片资源较多，加载时间较长，onloa
+                            红灯三秒亮一次，绿灯一秒亮一次，黄灯2秒亮一次；如何让三个灯不断交替重复亮灯 ？
+function red(){
+    console.log('red');
+}
+function green(){
+    console.log('gr
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-25
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-07
                             </span>
                         <span class="publish-author">
                             
@@ -1172,11 +1074,66 @@ load是当页面所有资源全部加载完成后（包括DOM文档树，css文�
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/js/">
-                        <span class="chip bg-color">js</span>
+                    <a href="/tags/promise/">
+                        <span class="chip bg-color">promise</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/01/06/css/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="css清除浮动方法（9种方法）">
+                        
+                        <span class="card-title">css清除浮动方法（9种方法）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            浮动的定义：使元素脱离文档流，按照指定方向发生移动，遇到父级边界或者相邻的浮动元素停了下来。
+为什么要清除浮动？清除浮动主要是为了解决，父元素因为子级元素浮动引起的内部高度为0的问题当父元素不给高度的时候，内部元素不浮动时会撑开，而浮动的时
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/面试题/" class="post-category">
+                                    面试题
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">css</span>
+                    </a>
+                    
+                    <a href="/tags/每日一题/">
+                        <span class="chip bg-color">每日一题</span>
                     </a>
                     
                 </div>
