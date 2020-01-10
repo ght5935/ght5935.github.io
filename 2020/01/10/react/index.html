@@ -952,7 +952,7 @@ React-routerR">
   <span class="token comment" spellcheck="true">// 禁止跳转</span>
 <span class="token operator">&lt;</span>Link to<span class="token operator">=</span><span class="token string">'##'</span><span class="token operator">></span>Home<span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">></span>  <span class="token comment" spellcheck="true">// 意想不到的效果</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h2 id="什么是"><a href="#什么是" class="headerlink" title="什么是"></a>什么是<navlink></navlink></h2><p><code>NavLink</code>是<code>Link</code>的一个子类，在Link组件的基础上增加了绘制组件的样式，比如：</p>
+<h2 id="什么是NavLink"><a href="#什么是NavLink" class="headerlink" title="什么是NavLink"></a>什么是NavLink</h2><p><code>NavLink</code>是<code>Link</code>的一个子类，在Link组件的基础上增加了绘制组件的样式，比如：</p>
 <blockquote>
 <ul>
 <li>activeClassName（string）：设置选中样式，默认值为 active；</li>
@@ -990,7 +990,7 @@ React-routerR">
   to<span class="token operator">=</span><span class="token string">"/events/123"</span>
   isActive<span class="token operator">=</span><span class="token punctuation">{</span>oddEvent<span class="token punctuation">}</span>
 <span class="token operator">></span>Event <span class="token number">123</span><span class="token operator">&lt;</span><span class="token operator">/</span>NavLink<span class="token operator">></span></code></pre>
-<h2 id="的用法"><a href="#的用法" class="headerlink" title="的用法"></a><switch>的用法</switch></h2><p>组件和语法中的 <code>switch</code> 功能类似，执行第一个匹配的路由。这个逻辑很直观也就是排他性，主要解决使用多个 <code>&lt;Route&gt;</code> 时多个路由同时匹配的问题。<br><code>&lt;Switch&gt;</code>的独特之处是独它仅仅渲染一个路由。相反地，每一个包含匹配地址(location)的<code>&lt;Route&gt;</code>都会被渲染。<br>实例：</p>
+<h2 id="Switch的用法"><a href="#Switch的用法" class="headerlink" title="Switch的用法"></a>Switch的用法</h2><p>组件和语法中的 <code>switch</code> 功能类似，执行第一个匹配的路由。这个逻辑很直观也就是排他性，主要解决使用多个 <code>&lt;Route&gt;</code> 时多个路由同时匹配的问题。<br><code>&lt;Switch&gt;</code>的独特之处是独它仅仅渲染一个路由。相反地，每一个包含匹配地址(location)的<code>&lt;Route&gt;</code>都会被渲染。<br>实例：</p>
 <pre class=" language-js"><code class="language-js"><span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">"/about"</span> component<span class="token operator">=</span><span class="token punctuation">{</span>About<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">></span>
 <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">"/:user"</span> component<span class="token operator">=</span><span class="token punctuation">{</span>User<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">></span>
 <span class="token operator">&lt;</span>Route component<span class="token operator">=</span><span class="token punctuation">{</span>NoMatch<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">></span></code></pre>
@@ -1001,7 +1001,7 @@ React-routerR">
   <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">"/:user"</span> component<span class="token operator">=</span><span class="token punctuation">{</span>User<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">></span>
   <span class="token operator">&lt;</span>Route component<span class="token operator">=</span><span class="token punctuation">{</span>NoMatch<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>Switch<span class="token operator">></span></code></pre>
-<h2 id="使用组件实现重定向"><a href="#使用组件实现重定向" class="headerlink" title="使用组件实现重定向"></a>使用<redirect>组件实现重定向</redirect></h2><p>无论何时你要重定向到另外一个地址的时候，都可以使用<code>Redirect</code>组件：</p>
+<h2 id="使用Redirect组件实现重定向"><a href="#使用Redirect组件实现重定向" class="headerlink" title="使用Redirect组件实现重定向"></a>使用Redirect组件实现重定向</h2><p>无论何时你要重定向到另外一个地址的时候，都可以使用<code>Redirect</code>组件：</p>
 <pre class=" language-js"><code class="language-js"><span class="token operator">&lt;</span>Redirect to<span class="token operator">=</span><span class="token string">"register"</span> <span class="token operator">/</span><span class="token operator">></span></code></pre>
 <h2 id="浏览器历史"><a href="#浏览器历史" class="headerlink" title="浏览器历史"></a>浏览器历史</h2><p>react router v4中，提供了一个<code>history</code>对象。这个对象包含了多个api，可以用来操作浏览器历史等。</p>
 <p>你也可以在React应用里使用history对象的方法：</p>
