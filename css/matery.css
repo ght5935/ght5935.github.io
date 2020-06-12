@@ -61,6 +61,22 @@ body {
     cursor:url("https://files-cdn.cnblogs.com/files/gaoht/mouse.ico"),auto;
 }
 
+body::after {
+    background-image: url(https://img.xjh.me/random_img.php?type=bg&ctype=acg&return=302);
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.2;
+    filter: grayscale(100%);
+    filter: gray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
 h1 {
     margin: 48px 0 22px -5px;
     font-size: 2.0rem;
@@ -178,6 +194,7 @@ mark {
 }
 
 .card {
+    background-color: rgba(218, 223, 230, 0.76) !important;
     border-radius: 10px;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
 }
