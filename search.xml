@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>判定字符是否唯一</title>
+      <link href="/2020/07/24/leetcode1/"/>
+      <url>/2020/07/24/leetcode1/</url>
+      
+        <content type="html"><![CDATA[<h3 id="实现一个算法，确定一个字符串-s-的所有字符是否全都不同"><a href="#实现一个算法，确定一个字符串-s-的所有字符是否全都不同" class="headerlink" title="实现一个算法，确定一个字符串 s 的所有字符是否全都不同"></a>实现一个算法，确定一个字符串 s 的所有字符是否全都不同</h3><h4 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h4><pre class=" language-js"><code class="language-js">输入<span class="token punctuation">:</span> s <span class="token operator">=</span> <span class="token string">"leetcode"</span>输出<span class="token punctuation">:</span> <span class="token boolean">false</span> </code></pre><h4 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h4><pre class=" language-js"><code class="language-js">输入<span class="token punctuation">:</span> s <span class="token operator">=</span> <span class="token string">"abc"</span>输出<span class="token punctuation">:</span> <span class="token boolean">true</span></code></pre><h4 id="限制："><a href="#限制：" class="headerlink" title="限制："></a>限制：</h4><p>0 &lt;= len(s) &lt;= 100<br>如果你不使用额外的数据结构，会很加分。</p><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/** * @param {string} astr * @return {boolean} */</span><span class="token keyword">var</span> isUnique <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>astr<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">let</span> arr <span class="token operator">=</span> astr<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">let</span> flag <span class="token operator">=</span> <span class="token boolean">true</span>    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>        <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">==</span>arr<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>            flag<span class="token operator">=</span> <span class="token boolean">true</span>        <span class="token punctuation">}</span> <span class="token keyword">else</span><span class="token punctuation">{</span>            flag<span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>            <span class="token keyword">break</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span>    <span class="token keyword">return</span> flag<span class="token punctuation">}</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端js几种加密/解密方法</title>
       <link href="/2020/01/15/t-4/"/>
       <url>/2020/01/15/t-4/</url>
@@ -170,9 +195,9 @@
       
         <tags>
             
-            <tag> css </tag>
-            
             <tag> 每日一题 </tag>
+            
+            <tag> css </tag>
             
         </tags>
       
