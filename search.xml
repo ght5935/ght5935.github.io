@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>判定是否互为字符重排</title>
+      <link href="/2020/07/27/leecode2/"/>
+      <url>/2020/07/27/leecode2/</url>
+      
+        <content type="html"><![CDATA[<h3 id="给定两个字符串-s1-和-s2，请编写一个程序，确定其中一个字符串的字符重新排列后，能否变成另一个字符串。"><a href="#给定两个字符串-s1-和-s2，请编写一个程序，确定其中一个字符串的字符重新排列后，能否变成另一个字符串。" class="headerlink" title="给定两个字符串 s1 和 s2，请编写一个程序，确定其中一个字符串的字符重新排列后，能否变成另一个字符串。"></a>给定两个字符串 s1 和 s2，请编写一个程序，确定其中一个字符串的字符重新排列后，能否变成另一个字符串。</h3><h3 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h3><p>输入: <code>s1 = &quot;abc&quot;, s2 = &quot;bca&quot;</code><br>输出: <code>true</code> </p><h3 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h3><p>输入: <code>s1 = &quot;abc&quot;, s2 = &quot;bad&quot;</code><br>输出: <code>false</code><br>说明：<br><code>0 &lt;= len(s1) &lt;= 100</code><br><code>0 &lt;= len(s2) &lt;= 100</code></p><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><pre><code>```js    /**     * @param {string} s1     * @param {string} s2     * @return {boolean}     */    var CheckPermutation = function(s1, s2) {        let arr1 = s1.split(&#39;&#39;).sort();        let arr2 = s2.split(&#39;&#39;).sort();        let flag = true        if(arr1.length == arr2.length){            for(let i=0;i&lt;arr1.length;i++){                if(arr1[i]==arr2[i]){                flag = true;                 } else{                flag = false;                  break;                  }            }        }else{        flag = false;          }    return flag;    };```</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>判定字符是否唯一</title>
       <link href="/2020/07/24/leetcode1/"/>
       <url>/2020/07/24/leetcode1/</url>
@@ -195,9 +220,9 @@
       
         <tags>
             
-            <tag> 每日一题 </tag>
-            
             <tag> css </tag>
+            
+            <tag> 每日一题 </tag>
             
         </tags>
       
