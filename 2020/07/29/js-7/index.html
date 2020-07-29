@@ -750,7 +750,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        268
+                        271
                     </div>
                     
 
@@ -774,7 +774,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="方法一-使用a标签下载"><a href="#方法一-使用a标签下载" class="headerlink" title="方法一 使用a标签下载"></a>方法一 使用a标签下载</h3><pre><code>-- 使用a标签下载, download 属性，`url` 是所要下载的地址，注意IE浏览器不支持
-`&lt;a href={`${url}`} download&gt;导出&lt;/a&gt;`</code></pre><h3 id="方法二-接口返会的是二进制流"><a href="#方法二-接口返会的是二进制流" class="headerlink" title="方法二  接口返会的是二进制流"></a>方法二  接口返会的是二进制流</h3><pre class=" language-js"><code class="language-js">        <span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token string">'后端给的下载地址'</span>
+`&lt;a href={`${url}`} download&gt;导出&lt;/a&gt;`</code></pre><h3 id="方法二-接口返会的是二进制流-兼容ie"><a href="#方法二-接口返会的是二进制流-兼容ie" class="headerlink" title="方法二  接口返会的是二进制流, 兼容ie"></a>方法二  接口返会的是二进制流, 兼容ie</h3><pre class=" language-js"><code class="language-js">        <span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token string">'后端给的下载地址'</span>
            <span class="token comment" spellcheck="true">//  获取时间戳</span>
         <span class="token keyword">let</span> timestamp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 获取XMLHttpRequest</span>
