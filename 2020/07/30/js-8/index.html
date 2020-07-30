@@ -4,12 +4,16 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="服务器上搭建node, echo丶若梦">
-    <meta name="description" content="在服务器上安装Nodejs
-使用命令行登录到服务器上ssh userName@remoteAddress      
-    // ssh root@192.168.1.26
-查看服务器系统的位数信息uname -a
-// Linux li">
+    <meta name="keywords" content="前端缓存机制, echo丶若梦">
+    <meta name="description" content="1. 缓存的作用
+
+加快资源加载速度，提高用户体验
+节省带宽，服务器端资源无需重新传输；甚至一些缓存无需进行Http请求
+服务器端缓存，如（CDN）可以减缓多用户并行请求的压力，减轻服务器压力
+
+
+2. 缓存的分类
+服务器缓存 如（CDN）">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>服务器上搭建node | echo丶若梦</title>
+    <title>前端缓存机制 | echo丶若梦</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -604,13 +608,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        服务器上搭建node
+                        前端缓存机制
                     </div>
                 </div>
             </div>
@@ -722,8 +726,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/node/">
-                                <span class="chip bg-color">node</span>
+                            <a href="/tags/js/">
+                                <span class="chip bg-color">js</span>
                             </a>
                         
                     </div>
@@ -734,8 +738,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/node/" class="post-category">
-                                node
+                            <a href="/categories/面试题/" class="post-category">
+                                面试题
                             </a>
                         
                     </div>
@@ -746,21 +750,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-09-25
+                    2020-07-30
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        351
+                        776
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -776,26 +780,58 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="在服务器上安装Nodejs"><a href="#在服务器上安装Nodejs" class="headerlink" title="在服务器上安装Nodejs"></a>在服务器上安装Nodejs</h2><hr>
-<h3 id="使用命令行登录到服务器上"><a href="#使用命令行登录到服务器上" class="headerlink" title="使用命令行登录到服务器上"></a>使用命令行登录到服务器上</h3><pre class=" language-js"><code class="language-js">ssh userName@remoteAddress      
-    <span class="token comment" spellcheck="true">// ssh root@192.168.1.26</span></code></pre>
-<h3 id="查看服务器系统的位数信息"><a href="#查看服务器系统的位数信息" class="headerlink" title="查看服务器系统的位数信息"></a>查看服务器系统的位数信息</h3><pre class=" language-js"><code class="language-js">uname <span class="token operator">-</span>a
-<span class="token comment" spellcheck="true">// Linux linux 3.13.0-65-generic #106-Ubuntu SMP Fri Oct 2 22:08:27 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux</span></code></pre>
-<h3 id="切换环境到安装目录"><a href="#切换环境到安装目录" class="headerlink" title="切换环境到安装目录"></a>切换环境到安装目录</h3><p>这里我们在根目录下新建一个叫做app的文件夹，将Nodejs安装到这个文件夹里</p>
-<pre class=" language-js"><code class="language-js">cd <span class="token operator">/</span>    
-mkdir app <span class="token operator">&amp;&amp;</span> cd app </code></pre>
-<h3 id="Nodejs的下载与安装"><a href="#Nodejs的下载与安装" class="headerlink" title="Nodejs的下载与安装"></a>Nodejs的下载与安装</h3><p>进入<a href="http://nodejs.cn/download/" target="_blank" rel="noopener">Nodejs官网</a>的下载页<br>找到自己需要的Nodejs版本我这里是<a href="https://npm.taobao.org/mirrors/node/v8.9.3/node-v8.9.3-linux-x64.tar.xz" target="_blank" rel="noopener">Linux64位v8.9.3</a></p>
-<h4 id="下载Nodejs·"><a href="#下载Nodejs·" class="headerlink" title="下载Nodejs·"></a>下载Nodejs·</h4><pre class=" language-js"><code class="language-js">wget 资源链接地址</code></pre>
-<h4 id="解压资源包"><a href="#解压资源包" class="headerlink" title="解压资源包"></a>解压资源包</h4><pre class=" language-js"><code class="language-js">tar <span class="token operator">-</span>xvf 刚下载的压缩包名称</code></pre>
-<h4 id="重命名解压后的资源包"><a href="#重命名解压后的资源包" class="headerlink" title="重命名解压后的资源包"></a>重命名解压后的资源包</h4><pre class=" language-js"><code class="language-js">mv 解压后的资源包名 nodejs</code></pre>
-<h4 id="确认过程无误"><a href="#确认过程无误" class="headerlink" title="确认过程无误"></a>确认过程无误</h4><p>确定nodejs的bin目录下，有node和npm两个文件，如果有，那么说明我们前面的步骤都没有问题。（没有的话要么是下载的资源有问题，要么是解压出现问题了）</p>
-<h3 id="建立全局链接"><a href="#建立全局链接" class="headerlink" title="建立全局链接"></a>建立全局链接</h3><p>现在我们的nodejs虽然已经安装成功了，但是还不能全局使用node命令，需要建立软连接，使其变为全</p>
-<pre class=" language-js"><code class="language-js">ln <span class="token operator">-</span>s <span class="token operator">/</span>app<span class="token operator">/</span>nodejs<span class="token operator">/</span>bin<span class="token operator">/</span>npm <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token regex">/bin/</span>
-ln <span class="token operator">-</span>s <span class="token operator">/</span>app<span class="token operator">/</span>nodejs<span class="token operator">/</span>bin<span class="token operator">/</span>node <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token regex">/bin/</span></code></pre>
-<p>这样，我们就大功告成了，你可以在任何地方通过</p>
-<pre class=" language-js"><code class="language-js">node <span class="token operator">-</span>v
-npm <span class="token operator">-</span>v</code></pre>
-<p>进行测试是否安装成功</p>
+                <h3 id="1-缓存的作用"><a href="#1-缓存的作用" class="headerlink" title="1. 缓存的作用"></a>1. 缓存的作用</h3><blockquote>
+<ul>
+<li>加快资源加载速度，提高用户体验</li>
+<li>节省带宽，服务器端资源无需重新传输；甚至一些缓存无需进行<code>Http</code>请求</li>
+<li>服务器端缓存，如（CDN）可以减缓多用户并行请求的压力，减轻服务器压力</li>
+</ul>
+</blockquote>
+<h3 id="2-缓存的分类"><a href="#2-缓存的分类" class="headerlink" title="2. 缓存的分类"></a>2. 缓存的分类</h3><ul>
+<li>服务器缓存 如（CDN）</li>
+<li>客户端缓存 （浏览器缓存）</li>
+</ul>
+<h3 id="3-浏览器缓存机制"><a href="#3-浏览器缓存机制" class="headerlink" title="3.浏览器缓存机制"></a>3.浏览器缓存机制</h3><ul>
+<li><p>强缓存： 本地进行缓存过期时间的比较。若时间没有过期，则直接从本地获取缓存的资源，无需向服务器端发起请求。</p>
+</li>
+<li><p>协商缓存：发起<code>Http</code>请求，请求头中包含一些协商缓存的字段，与服务器端进行比较，若资源没有修改，则服务器端返回<code>304</code>状态码，客户端则可以直接从缓存中获取资源，反之香服务器端发起求获取最新资源。</p>
+</li>
+</ul>
+<h4 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h4><blockquote>
+<ul>
+<li>Expires: 浏览器第一次发起请求，服务器端返回资源时带有一个Expires字段，该字段由服务器端计算所得，表示缓存过期的时间期限<ol>
+<li>具体判断是否过期：Expires &lt; 当前客户端时间</li>
+<li>该缓存有个弊端：Expires的时间是由服务器端计算所得，计算依据为服务器端第一次请求时间，而当前判断缓存时，与客户端时间做比较，倘若两端的时间不同呢？所以还是不够可靠</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Cache-Control：第一次发起请求，资源会存储当前时间，并且保存一个max-age。</li>
+</ul>
+</blockquote>
+<p>具体判断是否过期：<br>第一次请求的客户端时间 + max-age &lt; 当前客户端时间<br>max-age为第一次请求的时候服务器端发送的过期时间间隔，而两次比较都是客户端时间，因此可以解决Expires不准确的缺点。</p>
+<p>注：Cache-Control的优先级比Expires高</p>
+<h4 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h4><blockquote>
+<ul>
+<li>Last-Modified ， If-Modified-Since</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>Last-Modified:浏览器端发送请求时，服务器端返回Last-Modified告诉浏览器资源最后修改的时间，浏览器则把该时间存储到资源中。</p>
+</li>
+<li><p>If-Modified-Since：当强缓存的资源过期时，若资源中有Last-Modified字段，则浏览器将Last-Modified的时间赋值给If-Modified-Since，浏览器发起请求，将If-modified-Since字段包含在请求Header中，服务器端获得该字段，将其与服务器端对应资源最后的修改时间进行对比，倘若服务器端时间较旧，则返回304，不包含消息体；反之则正常请求。</p>
+</li>
+</ul>
+<p>确定：只能精确到秒级，在秒级内的操作无法精确； 若资源定期生成，但内容不变，此时Last-Modified会发生改变，则无法进行缓存了。</p>
+<blockquote>
+<ul>
+<li>Etag，If-None-Match</li>
+</ul>
+</blockquote>
+<p>该缓存方法的原理与Last-Modified相同；区别：Etag的值默认由服务器端中对文件的索引（INode）、大小（Size）和最后修改时间（MTime）进行Hash后生成。</p>
+<p>注：Etag的优先级高于Last-Modified</p>
 
             </div>
             <hr/>
@@ -955,9 +991,9 @@ npm <span class="token operator">-</span>v</code></pre>
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《服务器上搭建node》
+                    《前端缓存机制》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/25/node/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/30/js-8/" property="cc:attributionName"
                rel="cc:attributionURL">
                 echo丶若梦
             </a> 采用
@@ -998,7 +1034,7 @@ npm <span class="token operator">-</span>v</code></pre>
         repo: 'ght5935.github.io',
         owner: 'ght5935',
         admin: "ght5935",
-        id: '2019-09-25T15-40-33',
+        id: '2020-07-30T10-57-46',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1019,55 +1055,56 @@ npm <span class="token operator">-</span>v</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/09/29/blog/">
+                <a href="/2020/07/30/js-8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="blog主题定制（matery）">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="前端缓存机制">
                         
-                        <span class="card-title">blog主题定制（matery）</span>
+                        <span class="card-title">前端缓存机制</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前言
-本站所用主题matery，最近整理了一下配置，改一些美化相关的东西，根据个人喜好定制，如有瑕疵还请说明hexo-theme-matery仓库地址，这里再次感谢作者的开源。
-个性化定制根据个人喜好完成定制
-初始化定制中文初始配置文档
+                            1. 缓存的作用
+
+加快资源加载速度，提高用户体验
+节省带宽，服务器端资源无需重新传输；甚至一些缓存无需进行Http请求
+服务器端缓存，如（CDN）可以减缓多用户并行请求的压力，减轻服务器压力
 
 
+2. 缓存的分类
+服务器缓存 如（CDN）
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/hexo/" class="post-category">
-                                    hexo
+                            <a href="/categories/面试题/" class="post-category">
+                                    面试题
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/blog/">
-                        <span class="chip bg-color">blog</span>
-                    </a>
-                    
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/js/">
+                        <span class="chip bg-color">js</span>
                     </a>
                     
                 </div>
@@ -1081,34 +1118,32 @@ npm <span class="token operator">-</span>v</code></pre>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/12/hexo/">
+                <a href="/2020/07/29/js-7/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="hexo 一键部署">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="js下载导出Excel文件以及ie兼容问题">
                         
-                        <span class="card-title">hexo 一键部署</span>
+                        <span class="card-title">js下载导出Excel文件以及ie兼容问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            hexo+github建站博客的教程网上的资料已经很成熟了，很多没有服务器小伙伴大多用hexo+github来搭建博客的， 为了方便部署发布文章，这里写了一个 一键部署的脚本
-hexo常用命令
-
-hexo clean  清除缓存文件 db.
+                            方法一 使用a标签下载-- 使用a标签下载, download 属性，`url` 是所要下载的地址，注意IE浏览器不支持
+`&lt;a href={`${url}`} download&gt;导出&lt;/a&gt;`方法二  接口返会的是
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-12
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-29
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/hexo/" class="post-category">
-                                    hexo
+                            <a href="/categories/js/" class="post-category">
+                                    js
                                 </a>
                             
                             
@@ -1118,8 +1153,8 @@ hexo clean  清除缓存文件 db.
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
+                    <a href="/tags/js/">
+                        <span class="chip bg-color">js</span>
                     </a>
                     
                 </div>

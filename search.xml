@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>前端缓存机制</title>
+      <link href="/2020/07/30/js-8/"/>
+      <url>/2020/07/30/js-8/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-缓存的作用"><a href="#1-缓存的作用" class="headerlink" title="1. 缓存的作用"></a>1. 缓存的作用</h3><blockquote><ul><li>加快资源加载速度，提高用户体验</li><li>节省带宽，服务器端资源无需重新传输；甚至一些缓存无需进行<code>Http</code>请求</li><li>服务器端缓存，如（CDN）可以减缓多用户并行请求的压力，减轻服务器压力</li></ul></blockquote><h3 id="2-缓存的分类"><a href="#2-缓存的分类" class="headerlink" title="2. 缓存的分类"></a>2. 缓存的分类</h3><ul><li>服务器缓存 如（CDN）</li><li>客户端缓存 （浏览器缓存）</li></ul><h3 id="3-浏览器缓存机制"><a href="#3-浏览器缓存机制" class="headerlink" title="3.浏览器缓存机制"></a>3.浏览器缓存机制</h3><ul><li><p>强缓存： 本地进行缓存过期时间的比较。若时间没有过期，则直接从本地获取缓存的资源，无需向服务器端发起请求。</p></li><li><p>协商缓存：发起<code>Http</code>请求，请求头中包含一些协商缓存的字段，与服务器端进行比较，若资源没有修改，则服务器端返回<code>304</code>状态码，客户端则可以直接从缓存中获取资源，反之香服务器端发起求获取最新资源。</p></li></ul><h4 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h4><blockquote><ul><li>Expires: 浏览器第一次发起请求，服务器端返回资源时带有一个Expires字段，该字段由服务器端计算所得，表示缓存过期的时间期限<ol><li>具体判断是否过期：Expires &lt; 当前客户端时间</li><li>该缓存有个弊端：Expires的时间是由服务器端计算所得，计算依据为服务器端第一次请求时间，而当前判断缓存时，与客户端时间做比较，倘若两端的时间不同呢？所以还是不够可靠</li></ol></li></ul></blockquote><blockquote><ul><li>Cache-Control：第一次发起请求，资源会存储当前时间，并且保存一个max-age。</li></ul></blockquote><p>具体判断是否过期：<br>第一次请求的客户端时间 + max-age &lt; 当前客户端时间<br>max-age为第一次请求的时候服务器端发送的过期时间间隔，而两次比较都是客户端时间，因此可以解决Expires不准确的缺点。</p><p>注：Cache-Control的优先级比Expires高</p><h4 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h4><blockquote><ul><li>Last-Modified ， If-Modified-Since</li></ul></blockquote><ul><li><p>Last-Modified:浏览器端发送请求时，服务器端返回Last-Modified告诉浏览器资源最后修改的时间，浏览器则把该时间存储到资源中。</p></li><li><p>If-Modified-Since：当强缓存的资源过期时，若资源中有Last-Modified字段，则浏览器将Last-Modified的时间赋值给If-Modified-Since，浏览器发起请求，将If-modified-Since字段包含在请求Header中，服务器端获得该字段，将其与服务器端对应资源最后的修改时间进行对比，倘若服务器端时间较旧，则返回304，不包含消息体；反之则正常请求。</p></li></ul><p>确定：只能精确到秒级，在秒级内的操作无法精确； 若资源定期生成，但内容不变，此时Last-Modified会发生改变，则无法进行缓存了。</p><blockquote><ul><li>Etag，If-None-Match</li></ul></blockquote><p>该缓存方法的原理与Last-Modified相同；区别：Etag的值默认由服务器端中对文件的索引（INode）、大小（Size）和最后修改时间（MTime）进行Hash后生成。</p><p>注：Etag的优先级高于Last-Modified</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>js下载导出Excel文件以及ie兼容问题</title>
       <link href="/2020/07/29/js-7/"/>
       <url>/2020/07/29/js-7/</url>
