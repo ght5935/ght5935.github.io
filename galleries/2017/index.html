@@ -21,15 +21,17 @@
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-    <!-- <style type="text/css">
-    
-    </style> -->
+    <link rel="stylesheet" type="text/css" href="/css/switch.css">
+    <style type="text/css">
+        
+    </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-    
+
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 <body>
@@ -579,10 +581,27 @@
         </div>
 
         
+        <div class="switch">
+            <input type="checkbox" name="toggle">
+            <label for="toggle">
+                <i class="bulb">
+                    <span class="bulb-center"></span>
+                    <span class="filament-1"></span>
+                    <span class="filament-2"></span>
+                    <span class="reflections">
+                        <span></span>
+                    </span>
+                    <span class="sparks">
+                        <i class="spark1"></i>
+                        <i class="spark2"></i>
+                        <i class="spark3"></i>
+                        <i class="spark4"></i>
+                    </span>
+                </i>
+            </label>
+        </div>
     </nav>
-
 </header>
-
     <link rel="stylesheet" href="/css/gallery.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css">
@@ -622,7 +641,7 @@
             <div id="mygallery">
 
                 <div class="waterfall" id="encrypt-blog" style="display:none">
-                    U2FsdGVkX19kDzpC0alwjbYnXfRfyV58ui240CQW+BWn7OatVHQLuc8OlYg00FqKgQqbITHDIVJg6ZGhuXr4596ov4aWBBoafw0MEZ6gUMQaQnqXLGl2nLom+p22R0BMfbetaGgrb2hxYLUnfAOfjONKPNfqz8MtxnTmZ2U3TTj4nD0eByleYTE1XWZHCBkA+bev7yKLy6TkVS37n6iA4S06EziXNGr7eknoH/CGaWn9Ou4oCCb8UJYCoji19Yis/J9uU+m231sLllSTwmolYTgAQQNs575hh20ZSZureaOFTnRtdCSNgMSI9Po4n5g+sxMR5dYI0n6nbs75GsxgmVHLwjOmPO79HkF7cU8NW/ThW9JyKpLKGvld4hhlydkxMV92/ywEuzyJWDiyj/YuH62frMsgeQyWZDqTGQIg1+ZSiSj8g4sOFxp+NYW0CSP2qPovNX4IByeYQQGHTT7wc48aB7iBNglG1Xcf4pv+CppAWy+aLsNkOr0rW7ShlU4R6QyQjJCjhp6jPjk2e07xp/EB8lWTqONauZFekfgVIOlWRUtpoKcL5qjo9RQ5s1ozMElySqPYHyDkI2F+khxo3sFwiybWMmbk5koloGVmwNbLfj0knPiTsqvTSDRBQHDw0Fh51lomPk2g0mQKWhPEdZRYnbsdiLQxVf8ND+YMrlLYL0ZXpOyNOHlruu5sqx7q46o6uqr/+sSHrBRhKHbQ/TG9iKWvoe0AJODfndXpxCvWAZW8TSMH94/B3HknxhVQxMSDTXA3lnRWhC4YFt8E8HDUpMOos9DjWFBz5hdUMADM73mzlds4hqFzPx4DzC9P
+                    U2FsdGVkX1/PyQp4pxUv1TasTbNm1R6MGXuJSHIez0NamcnStisvytz5guSTPADsYDp5C72CQXC/ocOcQuOq2ZQ4HQyW/hCPwRtXKtW0KUrJqoXi6WCmEAYTzvOQ4cn/QvxX7EiuNSHPoX5XRVZqmnjQxKOoTMTQWXJkNqlFcIlPCA7Jm6RypjedVk7qI7jRwnYWTKZMsQN0PFWZfu6UxbafchYXzOrgdB8DLVtjuviRpGiw+kvsbr0BqfGHVo8eTT1kzxpzrqaM92J9S4zNsQm9n2wnCCbC+zb3jrdZDM74W4bzYdjbBJUdsPiQ13ej9XMiM9CIUIVcuky8ClLNJJk3nycC/koglK5pVhtNnWaMq5DV6a6tuSc3P9s+Gh7EOruuMZH29R2uL5Jf4BrDdQCO5y8DCDpIX/sZIoIUVniatuDhLBFd9sV8oYRj8S/D0150Te46EIBaTxJbw9W9UOe032/68v+NhH4sWzUW7Lf55R2Ek+WY+r22G1l9k8Ijbc+c6PxpXSQXVspa7bUUz2x49Q4t1aEhO5pZ2BUW54QkSnWGwd6afrFBZKbkKkS6WsWORZ7MDcYtwU7C9GDUECn2DM0gG8PqJj7W9+IISPB8rtnJRkxNciBgnxSLIM+iDiuUfprG+R2PfumPTVg3M0kn7WB3IL+YxZb3TGDgtJHEjoHDqB1pTmRAggvbd0vRW/da7CYn18OJIRHaeeUOe3YRbyM08W1ub5JHtMEFAAEKjkwWVIyrrgK+VWlH+LKl5YW0FzEGa1pN7eeU2HxKL9k9YiDeRfCB+MO+ZDTvgvU0I1EaK3TkZJCXXer5tvHz
                 </div>
             </div>
 
@@ -861,7 +880,7 @@ $(function () {
     </script>
     
 
-    
+    <!-- 
 
     
     <script type="text/javascript" size="150" alpha='0.6'
@@ -870,7 +889,7 @@ $(function () {
 
     
     <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
-    
+     -->
 
     
 

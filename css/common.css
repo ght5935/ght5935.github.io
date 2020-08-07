@@ -1,0 +1,74 @@
+/* ------------------------------my audio----------------------------*/
+.musicBox {
+    position: fixed;
+    bottom: 5px;
+    right: calc((82% - 1100px)/4);
+    width: 9%;
+    z-index: 1;
+}
+.musicImgBox {
+    width: 100%;
+    position: relative;
+}
+
+.musicImgBox .musicAll {
+    width: 100%;
+    border-radius: 5%;
+}
+
+.musicPlayer {
+    width: 32%;
+    position: absolute;
+    top: 58%;
+    left: 33%;
+    cursor: pointer;
+}
+
+.music-note {
+    position: absolute;
+    font-size: 150px;
+    color: #FCB040;
+    width: 30%;
+    left: 50%;
+    opacity: 0;
+}
+ #music-one {
+    margin-left: -80%;
+    animation: note-anim 2.5s 0s infinite ease;
+    animation-fill-mode: forwards;
+}
+ #music-two {
+    margin-left: 50%;
+    animation: note-anim 2.5s 0.6s infinite ease;
+    animation-fill-mode: forwards;
+}
+.playerOne {
+  display: block;
+}
+.playerTwo {
+  display: none;
+}
+@keyframes note-anim
+{
+ 0% {
+    opacity: 0;
+    -webkit-transform: translate(10px,30px);
+    transform: translate(10px,30px);
+}
+30% {
+    -webkit-transform: rotate(12deg) translate(-30px,0px);
+    transform: rotate(12deg) translate(-30px,0px);
+}
+45% {
+    opacity: 1;
+}
+60% {
+    -webkit-transform: rotate(-12deg) translate(30px,-100px);
+    transform: rotate(-12deg) translate(30px,-100px);
+}
+100% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg) translate(0px,-180px);
+    transform: rotate(0deg) translate(0px,-180px);
+} 
+}

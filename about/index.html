@@ -21,15 +21,17 @@
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-    <!-- <style type="text/css">
-    
-    </style> -->
+    <link rel="stylesheet" type="text/css" href="/css/switch.css">
+    <style type="text/css">
+        
+    </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-    
+
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 <body>
@@ -579,10 +581,27 @@
         </div>
 
         
+        <div class="switch">
+            <input type="checkbox" name="toggle">
+            <label for="toggle">
+                <i class="bulb">
+                    <span class="bulb-center"></span>
+                    <span class="filament-1"></span>
+                    <span class="filament-2"></span>
+                    <span class="reflections">
+                        <span></span>
+                    </span>
+                    <span class="sparks">
+                        <i class="spark1"></i>
+                        <i class="spark2"></i>
+                        <i class="spark3"></i>
+                        <i class="spark4"></i>
+                    </span>
+                </i>
+            </label>
+        </div>
     </nav>
-
 </header>
-
     <style type="text/css">
     /* don't remove. */
     .about-cover {
@@ -864,7 +883,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"特效demo","value":1},{"name":"hexo","value":2},{"name":"app","value":1},{"name":"Js","value":1},{"name":"每日一题","value":7},{"name":"碎碎念","value":1},{"name":"js","value":4},{"name":"面试题","value":5},{"name":"算法","value":3},{"name":"node","value":1},{"name":"react","value":1},{"name":"网站优化","value":1},{"name":"移动端","value":1}],
+                data: [{"name":"特效demo","value":1},{"name":"app","value":1},{"name":"hexo","value":2},{"name":"Js","value":1},{"name":"碎碎念","value":1},{"name":"每日一题","value":7},{"name":"js","value":4},{"name":"面试题","value":5},{"name":"算法","value":3},{"name":"node","value":1},{"name":"网站优化","value":1},{"name":"react","value":1},{"name":"移动端","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -888,7 +907,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["js","每日一题","leetcode","hexo","linux","react","Demo","blog","cookie","day"]
+                data: ["js","每日一题","leetcode","hexo","react","linux","Demo","blog","cookie","day"]
             }
         ],
         yAxis: [
@@ -1099,6 +1118,18 @@
             
             
             
+            <a href="/tags/react/">
+                <span class="chip center-align waves-effect waves-light chip-default">react</span>
+            </a>
+            
+            
+            
+            <a href="/tags/vue/">
+                <span class="chip center-align waves-effect waves-light chip-default">vue</span>
+            </a>
+            
+            
+            
             <a href="/tags/linux/">
                 <span class="chip center-align waves-effect waves-light chip-default">linux</span>
             </a>
@@ -1117,20 +1148,8 @@
             
             
             
-            <a href="/tags/react/">
-                <span class="chip center-align waves-effect waves-light chip-default">react</span>
-            </a>
-            
-            
-            
-            <a href="/tags/vue/">
-                <span class="chip center-align waves-effect waves-light chip-default">vue</span>
-            </a>
-            
-            
-            
-            <a href="/tags/css/">
-                <span class="chip center-align waves-effect waves-light chip-default">css</span>
+            <a href="/tags/Event-Loop/">
+                <span class="chip center-align waves-effect waves-light chip-default">Event Loop</span>
             </a>
             
             
@@ -1141,8 +1160,8 @@
             
             
             
-            <a href="/tags/Event-Loop/">
-                <span class="chip center-align waves-effect waves-light chip-default">Event Loop</span>
+            <a href="/tags/css/">
+                <span class="chip center-align waves-effect waves-light chip-default">css</span>
             </a>
             
             
@@ -1450,7 +1469,7 @@ $(function () {
     </script>
     
 
-    
+    <!-- 
 
     
     <script type="text/javascript" size="150" alpha='0.6'
@@ -1459,7 +1478,7 @@ $(function () {
 
     
     <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
-    
+     -->
 
     
 
