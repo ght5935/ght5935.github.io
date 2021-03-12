@@ -1006,17 +1006,20 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 </ul>
 <h2 id="15-Babel原理吧"><a href="#15-Babel原理吧" class="headerlink" title="15.Babel原理吧"></a>15.Babel原理吧</h2><p>大多数JavaScript Parser遵循 estree 规范，Babel 最初基于 acorn 项目(轻量级现代 JavaScript 解析器) Babel大概分为三大部分：</p>
 <ul>
-<li>解析：将代码转换成 AST<ul>
+<li><p>解析：将代码转换成 AST</p>
+<ul>
 <li>词法分析：将代码(字符串)分割为token流，即语法单元成的数组</li>
-<li>语法分析：分析token流(上面生成的数组)并生成 AST<ul>
-<li>转换：访问 AST 的节点进行变换操作生产新的 AST</li>
-</ul>
-</li>
-<li><a href="https://github.com/NervJS/taro/blob/master/packages/taro-transformer-wx/src/index.ts#L15" target="_blank" rel="noopener">Taro</a>就是利用 babel 完成的小程序语法转换<ul>
-<li>生成：以新的 AST 为基础生成代码</li>
+<li>语法分析：分析token流(上面生成的数组)并生成 AST</li>
 </ul>
 </li>
 </ul>
+<ul>
+<li><p>转换：访问 AST 的节点进行变换操作生产新的 AST</p>
+<ul>
+<li><a href="https://github.com/NervJS/taro/blob/master/packages/taro-transformer-wx/src/index.ts#L15" target="_blank" rel="noopener">Taro</a>就是利用 babel 完成的小程序语法转换</li>
+</ul>
+</li>
+<li><p>生成：以新的 AST 为基础生成代码</p>
 </li>
 </ul>
 <p>想了解如何一步一步实现一个编译器的同学可以移步 Babel 官网曾经推荐的开源项目 <a href="https://github.com/jamiebuilds/the-super-tiny-compiler" target="_blank" rel="noopener">the-super-tiny-compiler</a></p>
