@@ -772,14 +772,14 @@ url-loa">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3.5k
+                        3.7k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        13 分
+                        14 分
                     </div>
                     
                 
@@ -1004,7 +1004,23 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <li><code>size-plugin</code>：监控资源体积变化，尽早发现问题</li>
 <li><code>HotModuleReplacementPlugin</code>：模块热替换</li>
 </ul>
-<p>参考</p>
+<h2 id="15-Babel原理吧"><a href="#15-Babel原理吧" class="headerlink" title="15.Babel原理吧"></a>15.Babel原理吧</h2><p>大多数JavaScript Parser遵循 estree 规范，Babel 最初基于 acorn 项目(轻量级现代 JavaScript 解析器) Babel大概分为三大部分：</p>
+<ul>
+<li>解析：将代码转换成 AST<ul>
+<li>词法分析：将代码(字符串)分割为token流，即语法单元成的数组</li>
+<li>语法分析：分析token流(上面生成的数组)并生成 AST<ul>
+<li>转换：访问 AST 的节点进行变换操作生产新的 AST</li>
+</ul>
+</li>
+<li><a href="https://github.com/NervJS/taro/blob/master/packages/taro-transformer-wx/src/index.ts#L15" target="_blank" rel="noopener">Taro</a>就是利用 babel 完成的小程序语法转换<ul>
+<li>生成：以新的 AST 为基础生成代码</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>想了解如何一步一步实现一个编译器的同学可以移步 Babel 官网曾经推荐的开源项目 <a href="https://github.com/jamiebuilds/the-super-tiny-compiler" target="_blank" rel="noopener">the-super-tiny-compiler</a></p>
+<p>作者：童欧巴<br>链接：<a href="https://juejin.cn/post/6844904094281236487" target="_blank" rel="noopener">https://juejin.cn/post/6844904094281236487</a><br>来源：掘金<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。<br>参考</p>
 <p>深入浅出 Webpack<br>Webpack 实战<br>玩转 Webpack</p>
 <p>作者：童欧巴<br>链接：<a href="https://juejin.im/post/6844904094281236487" target="_blank" rel="noopener">https://juejin.im/post/6844904094281236487</a><br>来源：掘金<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 
@@ -1477,7 +1493,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">44.6k</span>&nbsp;字
+                class="white-color">44.8k</span>&nbsp;字
             
             
             
