@@ -1,0 +1,1650 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="CommonJs和Es Module及它们的区别, echo丶若梦">
+    <meta name="description" content="为什么会有CommonJs和Es Module呢我们都知道在早期JavaScript模块这一概念，都是通过script标签引入js文件代码。当然这写基本简单需求没有什么问题，但当我们的项目越来越庞大时，我们引入的js文件就会越多，这时就会出">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>CommonJs和Es Module及它们的区别 | echo丶若梦</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/switch.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">echo丶若梦</span>
+                </a>
+            </div>
+            
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/" class="waves-effect waves-light">
+						
+						<i class="fa fa-home"></i>
+						
+						<span>首页</span>
+					</a>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/tags" class="waves-effect waves-light">
+						
+						<i class="fa fa-tags"></i>
+						
+						<span>标签</span>
+					</a>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/archives" class="waves-effect waves-light">
+						
+						<i class="fa fa-archive"></i>
+						
+						<span>归档</span>
+					</a>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+			<a href="/medias" class="waves-effect waves-light">
+			
+			             
+						     <i class="fa fas fa-list"></i>
+						
+						<span>媒体</span>
+						<i class="fa fa-chevron-down" aria-hidden="true"></i>
+			</a>
+            <ul class="sub-nav menus_item_child ">
+              
+                <li> 
+                  <a href="/musics" >
+				       
+						<i class="fa fas fa-music" style="margin-top: -20px;"></i>
+				   
+				   <span>音乐</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/movies" >
+				       
+						<i class="fa fas fa-film" style="margin-top: -20px;"></i>
+				   
+				   <span>电影</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/books" >
+				       
+						<i class="fa fas fa-book" style="margin-top: -20px;"></i>
+				   
+				   <span>书单</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/galleries" class="waves-effect waves-light">
+						
+						<i class="fa fa-photo"></i>
+						
+						<span>相册</span>
+					</a>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/about" class="waves-effect waves-light">
+						
+						<i class="fa fa-user-circle-o"></i>
+						
+						<span>关于</span>
+					</a>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/contact" class="waves-effect waves-light">
+						
+						<i class="fa fa-comments"></i>
+						
+						<span>留言板</span>
+					</a>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/friends" class="waves-effect waves-light">
+						
+						<i class="fa fa-address-book"></i>
+						
+						<span>友情链接</span>
+					</a>
+          
+        </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fa fa-home"></i>
+      
+      <span>首页</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fa fa-tags"></i>
+      
+      <span>标签</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fa fa-archive"></i>
+      
+      <span>归档</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/medias" class="waves-effect waves-light">
+      
+      <i class="fa fas fa-list"></i>
+      
+      <span>媒体</span>
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </a>
+
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fa fas fa-music" style="margin-top: -20px;"></i>
+          
+          <span>音乐</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fa fas fa-film" style="margin-top: -20px;"></i>
+          
+          <span>电影</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fa fas fa-book" style="margin-top: -20px;"></i>
+          
+          <span>书单</span>
+        </a>
+      </li>
+      
+    </ul>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/galleries" class="waves-effect waves-light">
+      
+      <i class="fa fa-photo"></i>
+      
+      <span>相册</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fa fa-user-circle-o"></i>
+      
+      <span>关于</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fa fa-comments"></i>
+      
+      <span>留言板</span>
+    </a>
+
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fa fa-address-book"></i>
+      
+      <span>友情链接</span>
+    </a>
+
+    
+  </li>
+  
+
+  <li> 
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+    </a>
+  </li>
+
+</ul>
+
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+  <div class="mobile-head bg-color">
+    
+    <img src="/medias/logo.png" class="logo-img circle responsive-img">
+    
+    <div class="logo-name">echo丶若梦</div>
+    <div class="logo-desc">
+      
+      个人博客
+      
+    </div>
+  </div>
+
+  
+
+  <!-- <ul class="menu-list mobile-menu-list">
+    
+    <li class="m-nav-item">
+      
+      <a href="/" class="waves-effect waves-light">
+        
+        <i class="fa fa-fw fa-home"></i>
+        
+        首页
+      </a>
+      
+    </li>
+    
+    <li class="m-nav-item">
+      
+      <a href="/tags" class="waves-effect waves-light">
+        
+        <i class="fa fa-fw fa-tags"></i>
+        
+        标签
+      </a>
+      
+    </li>
+    
+    <li class="m-nav-item">
+      
+      <a href="/archives" class="waves-effect waves-light">
+        
+        <i class="fa fa-fw fa-archive"></i>
+        
+        归档
+      </a>
+      
+    </li>
+    
+    <li class="m-nav-item">
+      
+      <a href="javascript:;">
+        
+        <i class="fa fa-fw fas fa-list"></i>
+        
+        媒体
+        <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+      </a>
+      <ul>
+        
+        <li>
+          <a href="/musics">
+            
+            <i class="fa fas fa-music" style="left: 18px; position: absolute;"></i>
+            
+            <span>音乐</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="/movies">
+            
+            <i class="fa fas fa-film" style="left: 18px; position: absolute;"></i>
+            
+            <span>电影</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="/books">
+            
+            <i class="fa fas fa-book" style="left: 18px; position: absolute;"></i>
+            
+            <span>书单</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li class="m-nav-item">
+      
+      <a href="/galleries" class="waves-effect waves-light">
+        
+        <i class="fa fa-fw fa-photo"></i>
+        
+        相册
+      </a>
+      
+    </li>
+    
+    <li class="m-nav-item">
+      
+      <a href="/about" class="waves-effect waves-light">
+        
+        <i class="fa fa-fw fa-user-circle-o"></i>
+        
+        关于
+      </a>
+      
+    </li>
+    
+    <li class="m-nav-item">
+      
+      <a href="/contact" class="waves-effect waves-light">
+        
+        <i class="fa fa-fw fa-comments"></i>
+        
+        Contact
+      </a>
+      
+    </li>
+    
+    <li class="m-nav-item">
+      
+      <a href="/friends" class="waves-effect waves-light">
+        
+        <i class="fa fa-fw fa-address-book"></i>
+        
+        友情链接
+      </a>
+      
+    </li>
+    
+    
+  </ul> -->
+
+  <!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17 -->
+  <ul class="menu-list mobile-menu-list">
+    
+    <li class="m-nav-item">
+      
+      <a href="/" class="waves-effect waves-light">
+        
+        <i class="fa fa-fw fa-home"></i>
+        
+        首页 </a>
+      
+    </li>
+    
+    <li class="m-nav-item">
+      
+      <a href="/tags" class="waves-effect waves-light">
+        
+        <i class="fa fa-fw fa-tags"></i>
+        
+        标签 </a>
+      
+    </li>
+    
+    <li class="m-nav-item">
+      
+      <a href="/archives" class="waves-effect waves-light">
+        
+        <i class="fa fa-fw fa-archive"></i>
+        
+        归档 </a>
+      
+    </li>
+    
+    <li class="m-nav-item">
+      
+      <a href="javascript:;">
+        
+        <i class="fa fa-fw fas fa-list"></i>
+        
+        媒体
+        <span class="m-icon"><i class="fa fa-chevron-right"></i></span> </a>
+      <ul>
+        
+        <li> <a href="/musics">
+            
+            <i class="fa fas fa-music" style="left: 25px; position: absolute;"></i>
+             <span>音乐</span> </a> </li>
+        
+        <li> <a href="/movies">
+            
+            <i class="fa fas fa-film" style="left: 25px; position: absolute;"></i>
+             <span>电影</span> </a> </li>
+        
+        <li> <a href="/books">
+            
+            <i class="fa fas fa-book" style="left: 25px; position: absolute;"></i>
+             <span>书单</span> </a> </li>
+        
+      </ul>
+      
+    </li>
+    
+    <li class="m-nav-item">
+      
+      <a href="/galleries" class="waves-effect waves-light">
+        
+        <i class="fa fa-fw fa-photo"></i>
+        
+        相册 </a>
+      
+    </li>
+    
+    <li class="m-nav-item">
+      
+      <a href="/about" class="waves-effect waves-light">
+        
+        <i class="fa fa-fw fa-user-circle-o"></i>
+        
+        关于 </a>
+      
+    </li>
+    
+    <li class="m-nav-item">
+      
+      <a href="/contact" class="waves-effect waves-light">
+        
+        <i class="fa fa-fw fa-comments"></i>
+        
+        Contact </a>
+      
+    </li>
+    
+    <li class="m-nav-item">
+      
+      <a href="/friends" class="waves-effect waves-light">
+        
+        <i class="fa fa-fw fa-address-book"></i>
+        
+        友情链接 </a>
+      
+    </li>
+    
+    
+  </ul>
+
+
+
+
+</div>
+        </div>
+
+        
+        <div class="switch">
+            <input type="checkbox" name="toggle">
+            <label for="toggle">
+                <i class="bulb">
+                    <span class="bulb-center"></span>
+                    <span class="filament-1"></span>
+                    <span class="filament-2"></span>
+                    <span class="reflections">
+                        <span></span>
+                    </span>
+                    <span class="sparks">
+                        <i class="spark1"></i>
+                        <i class="spark2"></i>
+                        <i class="spark3"></i>
+                        <i class="spark4"></i>
+                    </span>
+                </i>
+            </label>
+        </div>
+    </nav>
+</header>
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        CommonJs和Es Module及它们的区别
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/js/">
+                                <span class="chip bg-color">js</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/每日一题/" class="post-category">
+                                每日一题
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-03-16
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        1.7k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        6 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="为什么会有CommonJs和Es-Module呢"><a href="#为什么会有CommonJs和Es-Module呢" class="headerlink" title="为什么会有CommonJs和Es Module呢"></a>为什么会有CommonJs和Es Module呢</h2><p>我们都知道在早期JavaScript模块这一概念，都是通过script标签引入js文件代码。当然这写基本简单需求没有什么问题，但当我们的项目越来越庞大时，我们引入的js文件就会越多，这时就会出现以下问题：</p>
+<blockquote>
+<ul>
+<li>js文件作用域都是顶层，这会造成变量污染</li>
+<li>js文件多，变得不好维护</li>
+<li>js文件依赖问题，稍微不注意顺序引入错，代码全报错</li>
+</ul>
+</blockquote>
+<p>为了解决以上问题JavaScript社区出现了<code>CommonJs</code>，<code>CommonJs</code>是一种模块化的规范，包括现在的NodeJs里面也采用了部分CommonJs语法在里面。那么在后来Es6版本正式加入了<code>Es Module</code>模块，这两种都是解决上面问题，那么都是解决什么问题呢。</p>
+<blockquote>
+<ul>
+<li>解决变量污染问题，每个文件都是独立的作用域，所以不存在变量污染</li>
+<li>解决代码维护问题，一个文件里代码非常清晰</li>
+<li>解决文件依赖问题，一个文件里可以清楚的看到依赖了那些其它文件</li>
+</ul>
+</blockquote>
+<h2 id="CommonJs-基本语法"><a href="#CommonJs-基本语法" class="headerlink" title="CommonJs 基本语法"></a>CommonJs 基本语法</h2><h3 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h3><p><code>CommonJs</code>中使用<code>module.exports</code>导出变量及函数，也可以导出任意类型的值，看如下案例。</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 导出一个对象</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">"小菜"</span><span class="token punctuation">,</span>
+    age<span class="token punctuation">:</span> <span class="token number">26</span><span class="token punctuation">,</span>
+    sex<span class="token punctuation">:</span> <span class="token string">"male"</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 导出任意值</span>
+module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"小菜"</span>
+module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>sex <span class="token operator">=</span> <span class="token keyword">null</span>
+module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>age <span class="token operator">=</span> undefined
+</code></pre>
+<h3 id="直接导出"><a href="#直接导出" class="headerlink" title="直接导出"></a>直接导出</h3><p>导出也可以省略<code>module</code>关键字，直接写<code>exports</code>导出也可以，看如下案例</p>
+<pre class=" language-js"><code class="language-js">exports<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"小菜"</span>
+exports<span class="token punctuation">.</span>sex <span class="token operator">=</span> <span class="token string">"male"</span></code></pre>
+<p>注意：如果使用exports导出单个值之后，就不能在导出一个对象值，这只会修改exports的对象改变，然而修改无效，最终导出还是name，和sex，因为最终的导出是由module.exports决定的。</p>
+<pre class=" language-js"><code class="language-js">exports<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"小菜"</span>
+exports<span class="token punctuation">.</span>sex <span class="token operator">=</span> <span class="token string">"male"</span>
+exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">"小菜"</span>
+<span class="token punctuation">}</span></code></pre>
+<p>这种情况会改变对象的引用值则导出无效，所以最后导出的还是<code>name</code>，<code>sex</code>。</p>
+<h3 id="混合导出"><a href="#混合导出" class="headerlink" title="混合导出"></a>混合导出</h3><p>混合导出，<code>exports</code>和<code>module.exports</code>可以同时使用，不会存在问题。</p>
+<pre class=" language-js"><code class="language-js">exports<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"小菜"</span>
+module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">26</span></code></pre>
+<h3 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h3><p><code>CommonJs</code>中使用<code>require</code>语法可以导入，如果想要单个的值，可以通过解构对象来获取</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// index.js</span>
+module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"小菜"</span>
+module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">26</span>
+
+<span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./index.js"</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// { name: "小菜", age: 26 }</span></code></pre>
+<h3 id="重复导入"><a href="#重复导入" class="headerlink" title="重复导入"></a>重复导入</h3><p>不管是<code>CommonJs</code>还是<code>Es Module</code>都不会重复导入，就是只要该文件内加载过一次这个文件了，我<code>再次导入一次是不会生效</code>的。</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./index.js"</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./index.js"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 不会在执行了</span></code></pre>
+<h3 id="动态导入"><a href="#动态导入" class="headerlink" title="动态导入"></a>动态导入</h3><p><code>CommonJs</code>支持动态导入，什么意思呢，就是可以在语句中，使用<code>require</code>语法，来看如下案例</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">let</span> lists <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"./index.js"</span><span class="token punctuation">,</span> <span class="token string">"./config.js"</span><span class="token punctuation">]</span>
+lists<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">require</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 动态导入</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>lists<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">require</span><span class="token punctuation">(</span>lists<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 动态导入</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="导入值的变化"><a href="#导入值的变化" class="headerlink" title="导入值的变化"></a>导入值的变化</h3><p><code>CommonJs</code>导入的值是拷贝的，所以可以修改拷贝值，但这会引起变量污染，一不小心就重名</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// index.js</span>
+<span class="token keyword">let</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    num<span class="token punctuation">,</span>
+    <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token operator">++</span> num 
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> <span class="token punctuation">{</span> num<span class="token punctuation">,</span> add <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./index.js"</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 0</span>
+<span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 0</span>
+num <span class="token operator">=</span> <span class="token number">100</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 100</span></code></pre>
+<p>上面example中，可以看到<code>exports</code>导出的值是值的拷贝，更改完<code>++ num</code>值没有发生变化，并且导入的<code>num</code>的值我们也可以进行修改</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p><code>CommonJs</code>解决了变量污染，文件依赖等问题，上面我们也介绍了它的基本语法，它可以动态导入(代码发生在运行时)，不可以重复导入</p>
+<h2 id="Es-Module-基本语法"><a href="#Es-Module-基本语法" class="headerlink" title="Es Module 基本语法"></a>Es Module 基本语法</h2><h3 id="导出-1"><a href="#导出-1" class="headerlink" title="导出"></a>导出</h3><p>在<code>Es Module</code>中导出分为两种，单个导出(<code>export</code>)、默认导出(<code>export default</code>)，单个导出在导入时不像<code>CommonJs</code>一样直接把值全部导入进来了，<code>Es Module</code>中可以导入我想要的值。那么默认导出就是全部直接导入进来，当然<code>Es Module</code>中也可以导出任意类型的值。</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 导出变量</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">"小菜"</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> age <span class="token operator">=</span> <span class="token number">26</span>
+
+<span class="token comment" spellcheck="true">// 导出函数也可以</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> test <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 另一种形式导出</span>
+<span class="token keyword">const</span> sex <span class="token operator">=</span> <span class="token string">"male"</span>
+<span class="token keyword">export</span> sex
+
+<span class="token comment" spellcheck="true">// 如果有多个的话</span>
+<span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">"小菜"</span>
+<span class="token keyword">const</span> sex <span class="token operator">=</span> <span class="token string">"male"</span>
+<span class="token keyword">export</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> sex <span class="token punctuation">}</span></code></pre>
+<h3 id="混合导出-1"><a href="#混合导出-1" class="headerlink" title="混合导出"></a>混合导出</h3><p>可以使用<code>export</code>和<code>export default</code>同时使用并且互不影响，只需要在导入时地方注意，如果文件里有混合导入，则必须先导入默认导出的，在导入单个导入的值。</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">"小菜"</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> age <span class="token operator">=</span> <span class="token number">26</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    msg<span class="token punctuation">:</span> <span class="token string">"hello 小菜"</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="export和export-default的区别"><a href="#export和export-default的区别" class="headerlink" title="export和export default的区别"></a>export和export default的区别</h3><h3 id="导入-1"><a href="#导入-1" class="headerlink" title="导入"></a>导入</h3><p><code>Es Module</code>使用的是<code>import</code>语法进行导入。如果要单个导入则必须使用花括号<code>{}</code> ，注意：这里的花括号跟解构不一样。</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// index,js</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">"小菜"</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> age <span class="token operator">=</span> <span class="token number">26</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> age <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./index.js'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// "小菜" 26</span>
+
+<span class="token comment" spellcheck="true">// 如果里面全是单个导出，我们就想全部直接导入则可以这样写</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> all <span class="token keyword">from</span> <span class="token string">'./index.js'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>all<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// {name: "小菜", age: 26}</span></code></pre>
+<h3 id="混合导入"><a href="#混合导入" class="headerlink" title="混合导入"></a>混合导入</h3><p>混合导入，则该文件内用到混合导入，<code>import</code>语句必须先是默认导出，后面再是单个导出，顺序一定要正确否则报错。</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// index,js</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">"小菜"</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> age <span class="token operator">=</span> <span class="token number">26</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    msg<span class="token punctuation">:</span> <span class="token string">"小菜"</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">import</span> msg<span class="token punctuation">,</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> age <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./index.js'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// { msg: "小菜" }</span></code></pre>
+<h3 id="导入值的变化-1"><a href="#导入值的变化-1" class="headerlink" title="导入值的变化"></a>导入值的变化</h3><p><code>export</code>导出的值是值的引用，并且内部有映射关系，这是<code>export</code>关键字的作用。而且导入的值，不能进行修改也就是只读状态。</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// index.js</span>
+<span class="token keyword">export</span> <span class="token keyword">let</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">++</span> num
+<span class="token punctuation">}</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> num<span class="token punctuation">,</span> add <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./index.js"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 0</span>
+<span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 1</span>
+num <span class="token operator">=</span> <span class="token number">10</span> <span class="token comment" spellcheck="true">// 抛出错误</span></code></pre>
+<h3 id="Es-Module是静态"><a href="#Es-Module是静态" class="headerlink" title="Es Module是静态"></a>Es Module是静态</h3><p>就是<code>Es Module</code>语句<code>import只能声明在该文件的最顶部，不能动态加载语句，Es Module</code>语句运行在代码编译时。</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">import</span> xxx <span class="token keyword">from</span> <span class="token string">'XXX'</span> <span class="token comment" spellcheck="true">// 报错</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><p><code>Es Module</code>也是解决了变量污染问题，依赖顺序问题，<code>Es Module</code>语法也是更加灵活，导出值也都是导出的引用，导出变量是可读状态，这加强了代码可读性。</p>
+<h2 id="CommonJs和Es-Module的区别"><a href="#CommonJs和Es-Module的区别" class="headerlink" title="CommonJs和Es Module的区别"></a>CommonJs和Es Module的区别</h2><h3 id="CommonJs"><a href="#CommonJs" class="headerlink" title="CommonJs"></a>CommonJs</h3><blockquote>
+<ul>
+<li>CommonJs可以动态加载语句，代码发生在运行时</li>
+<li>CommonJs混合导出，还是一种语法，只不过不用声明前面对象而已，当我导出引用对象时之前的导出就被覆盖了</li>
+<li>CommonJs导出值是拷贝，可以修改导出的值，这在代码出错时，不好排查引起变量污染</li>
+</ul>
+</blockquote>
+<h3 id="Es-Module"><a href="#Es-Module" class="headerlink" title="Es Module"></a>Es Module</h3><blockquote>
+<ul>
+<li>Es Module是静态的，不可以动态加载语句，只能声明在该文件的最顶部，代码发生在编译时</li>
+<li>Es Module混合导出，单个导出，默认导出，完全互不影响</li>
+<li>Es Module导出是引用值之前都存在映射关系，并且值都是可读的，不能修改</li>
+</ul>
+</blockquote>
+<p>来源：<a href="https://juejin.cn/post/6938581764432461854" target="_blank" rel="noopener">掘金</a><br>作者：蛙人</p>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+
+    
+
+</div>
+
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《CommonJs和Es Module及它们的区别》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/03/16/t-6/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                echo丶若梦
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'f0788a2aa0c694ad6a38',
+        clientSecret: 'b70e8073f70d6fc00e946a1ca031eba02e38dd5a',
+        repo: 'ght5935.github.io',
+        owner: 'ght5935',
+        admin: "ght5935",
+        id: '2021-03-16T14-58-38',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/03/16/t-6/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="CommonJs和Es Module及它们的区别">
+                        
+                        <span class="card-title">CommonJs和Es Module及它们的区别</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            为什么会有CommonJs和Es Module呢我们都知道在早期JavaScript模块这一概念，都是通过script标签引入js文件代码。当然这写基本简单需求没有什么问题，但当我们的项目越来越庞大时，我们引入的js文件就会越多，这时就会出
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/每日一题/" class="post-category">
+                                    每日一题
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/js/">
+                        <span class="chip bg-color">js</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/03/15/write-0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="手写一个🍏🍏🍏">
+                        
+                        <span class="card-title">手写一个🍏🍏🍏</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            写一个call🍏模拟一个call方法查看
+Function.prototype.myCall = function (context) {
+     // 挂在一个fn函数
+    var context = context || win
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/手写系列🍏/" class="post-category">
+                                    手写系列🍏
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/手写系列🍏/">
+                        <span class="chip bg-color">手写系列🍏</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: echo丶若梦<br />'
+            + '作者: echo丶若梦<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&nbsp;&copy;<a href="https://ght5935.github.io" target="_blank">echo丶若梦</a>&nbsp;基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>&nbsp;主题搭建
+            <br>
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">47.4k</span>&nbsp;字
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fa fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            <br>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+            <script>
+                var now = new Date();
+
+                function createtime() {
+                    var grt = new Date("06/28/2019 00:00:00");
+                    now.setTime(now.getTime() + 250);
+                    days = (now - grt) / 1000 / 60 / 60 / 24;
+                    dnum = Math.floor(days);
+                    hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+                    hnum = Math.floor(hours);
+                    if (String(hnum).length == 1) {
+                        hnum = "0" + hnum;
+                    }
+                    minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+                    mnum = Math.floor(minutes);
+                    if (String(mnum).length == 1) {
+                        mnum = "0" + mnum;
+                    }
+                    seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                    snum = Math.round(seconds);
+                    if (String(snum).length == 1) {
+                        snum = "0" + snum;
+                    }
+                    document.getElementById("timeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+                    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+                }
+                setInterval("createtime()", 250);
+            </script>
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/ght5935" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="https://www.cnblogs.com/gaoht/" class="tooltipped" target="_blank" data-tooltip="博客园: https://www.cnblogs.com/gaoht/" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">博</i>
+    </a>
+
+
+
+    <a href="https://juejin.im/user/59f14ee351882521f243712d" class="tooltipped" target="_blank" data-tooltip="掘金: https://juejin.im/user/59f14ee351882521f243712d" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">掘</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    <!-- 看板娘 -->
+    <!-- <script src="/js/autoload.js"></script> -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    <!-- 天气接口控件 -->
+    
+    <!-- 天气接口 -->
+<script type="text/javascript">
+    WIDGET = {FID: '1IJzWqjceC'}
+</script>
+
+<script type="text/javascript">
+    //只在桌面版网页启用特效 
+    var windowWidth = $(window).width();
+    if (windowWidth > 768) {
+        document.write('<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"><"/"script>');
+    } 
+</script>
+
+    
+    
+
+    <!-- 雪花 -->
+    
+    <script type="text/javascript">
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) { document.write('<script type="text/javascript" src="/js/snow.js"><"/"script>') }
+    </script>
+    
+
+    <!-- 樱花效果 -->
+    
+    <script type="text/javascript">
+        //只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        if (window.location.href == 'https://ght5935.github.io/') {
+            if (windowWidth > 768) { document.write('<script type="text/javascript" src="/js/sakura.js"><"/"script>') }
+        }
+    </script>
+    
+
+    <script type="text/javascript">
+        var OriginTitile = document.title, st;
+        document.addEventListener("visibilitychange", function () {
+            document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title = "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () { document.title = OriginTitile }, 3e3))
+        }) 
+    </script>
+
+    <!-- 鼠标滑过/ mac不支持 -->
+    
+    <script type="text/javascript">
+        let isMac = /macintosh|mac os x/i.test(navigator.userAgent);
+        if (!isMac) {
+            document.write('<script type="text/javascript" src="/js/mouseSlip.js"><"/"script>')
+        }
+    </script>
+    
+
+    <!-- 在线聊天工具  -->
+    
+
+    
+    <script>
+            (function (i, s, o, g, r, a, m) {
+                i["DaoVoiceObject"] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments);
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                a.charset = "utf-8";
+                m.parentNode.insertBefore(a, m)
+            })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+                "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: ""
+        });
+        daovoice('update');
+    </script>
+    
+
+    <!-- 
+
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+     -->
+
+    
+
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+
+</html>
