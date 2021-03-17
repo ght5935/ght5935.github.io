@@ -768,14 +768,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.7k
+                        1.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        6 分
+                        7 分
                     </div>
                     
                 
@@ -893,7 +893,27 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
     msg<span class="token punctuation">:</span> <span class="token string">"hello 小菜"</span>
 <span class="token punctuation">}</span></code></pre>
-<h3 id="export和export-default的区别"><a href="#export和export-default的区别" class="headerlink" title="export和export default的区别"></a>export和export default的区别</h3><h3 id="导入-1"><a href="#导入-1" class="headerlink" title="导入"></a>导入</h3><p><code>Es Module</code>使用的是<code>import</code>语法进行导入。如果要单个导入则必须使用花括号<code>{}</code> ，注意：这里的花括号跟解构不一样。</p>
+<h3 id="export和export-default的区别"><a href="#export和export-default的区别" class="headerlink" title="export和export default的区别"></a>export和export default的区别</h3><blockquote>
+<ul>
+<li>1.export default 用于规定模块的默认对外接口</li>
+<li>2.很显然默认对外接口只能有一个，所以 export default 在同一个模块中只能出现一次</li>
+<li>3.export default只能直接输出，不能先定义再输出。</li>
+<li>4.其在 import 方式上也和 export 存在一定区别</li>
+</ul>
+</blockquote>
+<p>export的输出与import输入</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">output</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>output<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./index.js'</span></code></pre>
+<p>export default的输出与import输入</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">output</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">import</span> output <span class="token keyword">from</span> <span class="token string">'./index.js'</span></code></pre>
+<p>从以上两种 import 方式即可看出，export default 的 import 方式不需要使用大括号包裹。因为对于 export default 其输出的本来就只有一个接口，提供的是模块的默认接口，自然不需要使用大括号包裹</p>
+<h3 id="导入-1"><a href="#导入-1" class="headerlink" title="导入"></a>导入</h3><p><code>Es Module</code>使用的是<code>import</code>语法进行导入。如果要单个导入则必须使用花括号<code>{}</code> ，注意：这里的花括号跟解构不一样。</p>
 <pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// index,js</span>
 <span class="token keyword">export</span> <span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">"小菜"</span>
 <span class="token keyword">export</span> <span class="token keyword">const</span> age <span class="token operator">=</span> <span class="token number">26</span>
@@ -1423,7 +1443,7 @@ Function.prototype.myCall = function (context) {
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">47.4k</span>&nbsp;字
+                class="white-color">47.6k</span>&nbsp;字
             
             
             
