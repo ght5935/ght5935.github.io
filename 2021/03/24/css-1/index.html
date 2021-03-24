@@ -7,7 +7,7 @@
     <meta name="keywords" content="css 盒子模型, echo丶若梦">
     <meta name="description" content="css 盒子模型（box model）
 
-所有的html元素都可以看作盒子，在css中，”box model” 这一术语是用来布局的时候用的；css 盒子模型本质就是一个盒子，封装周围的html元素，他包括:外边距（margin）,边框（b">
+所有的html元素都可以看作盒子，在css中，”box model” 这一术语是用来布局的时候用的；css 盒子模型本质就是一个盒子，封装周围的html元素，他包括:外边距margin,边框（bod">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -790,12 +790,14 @@
             <div id="articleContent">
                 <h2 id="css-盒子模型（box-model）"><a href="#css-盒子模型（box-model）" class="headerlink" title="css 盒子模型（box model）"></a>css 盒子模型（box model）</h2><blockquote>
 <ul>
-<li>所有的html元素都可以看作盒子，在css中，”box model” 这一术语是用来布局的时候用的；css 盒子模型本质就是一个盒子，封装周围的html元素，他包括:外边距（margin）,边框（boder）,内边距（padding）， 实际内容（content）这四个属性</li>
+<li>所有的html元素都可以看作盒子，在css中，”box model” 这一术语是用来布局的时候用的；css 盒子模型本质就是一个盒子，封装周围的html元素，他包括:外边距<code>margin</code>,边框（<code>boder</code>）,内边距（<code>padding</code>）， 实际内容（<code>content</code>）这四个属性</li>
 </ul>
 </blockquote>
 <h2 id="W3C盒子模型（标准盒子模型）和IE盒子模型（怪异盒模型）"><a href="#W3C盒子模型（标准盒子模型）和IE盒子模型（怪异盒模型）" class="headerlink" title="W3C盒子模型（标准盒子模型）和IE盒子模型（怪异盒模型）"></a>W3C盒子模型（标准盒子模型）和IE盒子模型（怪异盒模型）</h2><h3 id="标准盒子模型"><a href="#标准盒子模型" class="headerlink" title="标准盒子模型"></a>标准盒子模型</h3><blockquote>
 <ul>
-<li>元素的内容占据的空间是由width属性设置的，而内容周围的padding和border值是另外计算的，即在标准模式下的盒模型，盒子实际内容（content）的width/height=我们设置的width/height;盒子总宽度/高度=width/height+padding+border+margin。</li>
+<li>元素的内容占据的空间是由width属性设置的，而内容周围的padding和border值是另外计算的，即在标准模式下的盒模型</li>
+<li>盒子实际内容（content）的width/height=我们设置的width/height</li>
+<li>盒子总宽度/高度=width/height+padding+border+margin。</li>
 </ul>
 </blockquote>
 <pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.box</span></span><span class="token punctuation">{</span>
@@ -807,7 +809,9 @@
  <span class="token punctuation">}</span></code></pre>
 <h3 id="IE盒子模型（怪异盒模型）"><a href="#IE盒子模型（怪异盒模型）" class="headerlink" title="IE盒子模型（怪异盒模型）"></a>IE盒子模型（怪异盒模型）</h3><blockquote>
 <ul>
-<li>在怪异盒模型的情况下，浏览器的width属性不是内容的宽度，而是内容，内边距和边框的宽度的总和，即使在怪异模式下的盒模型，盒子的（content）宽度+内边距padding+边框border 宽度= 我们设置的width（height也是如此）。盒子总宽度/高度=width/height +margin = 内容区宽度/高度+padding+border+margin.</li>
+<li>在怪异盒模型的情况下，浏览器的width属性不是内容的宽度，而是内容，内边距和边框的宽度的总和，即使在怪异模式下的盒模型</li>
+<li>盒子的（content）宽度+内边距padding+边框border 宽度= 我们设置的width（height也是如此）。</li>
+<li>盒子总宽度/高度=width/height +margin = 内容区宽度/高度+padding+border+margin.</li>
 </ul>
 </blockquote>
 <pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.box</span></span><span class="token punctuation">{</span>
@@ -1069,7 +1073,7 @@
                         
                             css 盒子模型（box model）
 
-所有的html元素都可以看作盒子，在css中，”box model” 这一术语是用来布局的时候用的；css 盒子模型本质就是一个盒子，封装周围的html元素，他包括:外边距（margin）,边框（b
+所有的html元素都可以看作盒子，在css中，”box model” 这一术语是用来布局的时候用的；css 盒子模型本质就是一个盒子，封装周围的html元素，他包括:外边距margin,边框（bod
                         
                     </div>
                     <div class="publish-info">
