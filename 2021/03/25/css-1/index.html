@@ -4,10 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="delete的用法, echo丶若梦">
-    <meta name="description" content="delete 是项目中使用频率并不很高的一个操作，书上写delete操作符要谨慎使用，因为大多数现代js引擎会针对构造函数创建的实例进行性能优化，而delete会破坏这种优化。
-例题看下题最后输出的是什么
-function Fn(obj){">
+    <meta name="keywords" content="css 盒子模型, echo丶若梦">
+    <meta name="description" content="css 盒子模型（box model）
+
+所有的html元素都可以看作盒子，在css中，”box model” 这一术语是用来布局的时候用的；css 盒子模型本质就是一个盒子，封装周围的html元素，他包括:外边距margin,边框（bod">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +15,7 @@ function Fn(obj){">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>delete的用法 | echo丶若梦</title>
+    <title>css 盒子模型 | echo丶若梦</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -621,13 +621,13 @@ function Fn(obj){">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        delete的用法
+                        css 盒子模型
                     </div>
                 </div>
             </div>
@@ -739,8 +739,12 @@ function Fn(obj){">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/js/">
-                                <span class="chip bg-color">js</span>
+                            <a href="/tags/css/">
+                                <span class="chip bg-color">css</span>
+                            </a>
+                        
+                            <a href="/tags/每日一题/">
+                                <span class="chip bg-color">每日一题</span>
                             </a>
                         
                     </div>
@@ -748,36 +752,27 @@ function Fn(obj){">
                 </div>
                 <div class="col s5 right-align">
                     
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/每日一题/" class="post-category">
-                                每日一题
-                            </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-15
+                    2021-03-25
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        802
+                        602
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        2 分
                     </div>
                     
                 
@@ -793,90 +788,49 @@ function Fn(obj){">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>delete 是项目中使用频率并不很高的一个操作，书上写delete操作符要谨慎使用，因为大多数现代js引擎会针对构造函数创建的实例进行性能优化，而delete会破坏这种优化。</p>
-<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>看下题最后输出的是什么</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Fn</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">delete</span> obj
-    <span class="token keyword">return</span> obj
-<span class="token punctuation">}</span>
-<span class="token function">Fn</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span><span class="token string">'小菜'</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<p><code>delete</code> 操作符用于<code>删除对象的某个属性</code>；如果没有指向这个属性的引用，那它最终会被释放   </p>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>直接使用delete操作符</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">delete</span> object<span class="token punctuation">.</span>property
-<span class="token keyword">delete</span> object<span class="token punctuation">[</span><span class="token string">'property'</span><span class="token punctuation">]</span></code></pre>
-<p>例如：</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
-    name<span class="token punctuation">:</span> <span class="token string">'小菜'</span>
-    age<span class="token punctuation">:</span> <span class="token number">18</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">delete</span> person<span class="token punctuation">.</span>name
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// {age: 18}</span></code></pre>
-<p><code>返回值</code>：对于所有情况都是true，即使是删除不存在的属性也会返回true，还是如上代码，不防打印一下返回值看看<br>除非属性是一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty" target="_blank" rel="noopener">自身的</a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Errors/Cant_delete" target="_blank" rel="noopener">不可配置</a>的属性，在这种情况下，非严格模式返回 false。</p>
-<pre class=" language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">delete</span> person<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//true</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">delete</span> person<span class="token punctuation">.</span>job<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//即使删除对象不存在的属性依然返回true</span></code></pre>
-<h2 id="具体使用"><a href="#具体使用" class="headerlink" title="具体使用"></a>具体使用</h2><h3 id="1-对象属性不存在"><a href="#1-对象属性不存在" class="headerlink" title="1. 对象属性不存在"></a>1. 对象属性不存在</h3><p>如上所述，如果删除对象不存在的属性，delete无效，但是返回值仍然为true</p>
-<h3 id="2-delete-和原型链"><a href="#2-delete-和原型链" class="headerlink" title="2. delete 和原型链"></a>2. delete 和原型链</h3><p>如果delete操作符删除属性成功，则该属性将永远不存在，但是该对象原型链上存在该同名属性，则该对象会从原型链上继承该同名属性。</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"小菜"</span><span class="token punctuation">,</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>job <span class="token operator">=</span> <span class="token string">"工程师"</span>
-<span class="token punctuation">}</span>
-
-Person<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"菜菜"</span>
-<span class="token comment" spellcheck="true">// 创建实例对象</span>
-<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 只删除p实例的name属性</span>
-<span class="token keyword">delete</span> p<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 通过打印，name属性成功删除,不能删除原型链上的属性</span>
-<span class="token comment" spellcheck="true">/*
-    Person { job: "工程师" }
-    job: "工程师"
-    __proto__:
-        name: "菜菜"
-        constructor: ƒ Person()
-        __proto__: Object
-*/</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 菜菜</span></code></pre>
-<p>注意：只对对象自身属性起作用，不能删除原型链上的属性</p>
-<h3 id="3-不可设置的属性"><a href="#3-不可设置的属性" class="headerlink" title="3.不可设置的属性"></a>3.不可设置的属性</h3><p>Math, Array, Object等内置对象的属性不可删除</p>
-<pre class=" language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span>
-<span class="token keyword">delete</span> Array<span class="token punctuation">.</span>length
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token number">0</span></code></pre>
-<p>需要注意的是，只是这些内置对象的属性不可删除，内置对象的方法是可以删除的，比如:</p>
-<pre class=" language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span>forEach<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 内置函数</span>
-<span class="token keyword">delete</span> Array<span class="token punctuation">.</span>forEach <span class="token comment" spellcheck="true">// 不用区分严格模式与否</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span>forEach<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// undefined</span></code></pre>
-<blockquote>
+                <h2 id="css-盒子模型（box-model）"><a href="#css-盒子模型（box-model）" class="headerlink" title="css 盒子模型（box model）"></a>css 盒子模型（box model）</h2><blockquote>
 <ul>
-<li>使用 var 声明的属性都是不可配置的， delete 不能删除<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">'小菜'</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 小菜</span>
-<span class="token keyword">delete</span> str
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 小菜</span></code></pre>
-</li>
-<li>let和const声明的属性<br>任何用let或const声明的属性不能够从它被声明的作用域中删除，我试了下，和var的效果是一样的</li>
+<li>所有的html元素都可以看作盒子，在css中，”box model” 这一术语是用来布局的时候用的；css 盒子模型本质就是一个盒子，封装周围的html元素，他包括:外边距<code>margin</code>,边框（<code>boder</code>）,内边距（<code>padding</code>）， 实际内容（<code>content</code>）这四个属性</li>
 </ul>
 </blockquote>
-<h3 id="3-delete-和数组"><a href="#3-delete-和数组" class="headerlink" title="3.delete 和数组"></a>3.delete 和数组</h3><p>使用delete操作符删除数组总某项元素时，被删除的元素会从该数组中删除，但是数组的length并不会改变</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">delete</span> arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token comment" spellcheck="true">/*
-    (3) [1, empty, 3]
-    0: 1
-    2: 3
-    length: 3
-*/</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// undefined</span></code></pre>
-<p>根据MDN中in在array中的使用：i in array：i表示array中的数组属性或者索引。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
-<li><code>delete</code>删除属性<blockquote>
+<h2 id="W3C盒子模型（标准盒子模型）和IE盒子模型（怪异盒模型）"><a href="#W3C盒子模型（标准盒子模型）和IE盒子模型（怪异盒模型）" class="headerlink" title="W3C盒子模型（标准盒子模型）和IE盒子模型（怪异盒模型）"></a>W3C盒子模型（标准盒子模型）和IE盒子模型（怪异盒模型）</h2><h3 id="标准盒子模型"><a href="#标准盒子模型" class="headerlink" title="标准盒子模型"></a>标准盒子模型</h3><blockquote>
 <ul>
-<li>变量</li>
-<li>delete 只对对象自身属性起作用，不能删除原型链上的属性</li>
-<li>使用 var 声明的属性都是不可配置的， delete 不能删除</li>
+<li>元素的内容占据的空间是由width属性设置的，而内容周围的padding和border值是另外计算的，即在标准模式下的盒模型</li>
+<li>盒子实际内容（content）的width/height=我们设置的width/height</li>
+<li>盒子总宽度/高度=width/height+padding+border+margin。</li>
 </ul>
 </blockquote>
-</li>
-</ol>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.box</span></span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">200</span>px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">200</span>px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span><span class="token number">20</span>px solid black<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span><span class="token number">50</span>px<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span><span class="token number">50</span>px<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span></code></pre>
+<h3 id="IE盒子模型（怪异盒模型）"><a href="#IE盒子模型（怪异盒模型）" class="headerlink" title="IE盒子模型（怪异盒模型）"></a>IE盒子模型（怪异盒模型）</h3><blockquote>
+<ul>
+<li>在怪异盒模型的情况下，浏览器的width属性不是内容的宽度，而是内容，内边距和边框的宽度的总和，即使在怪异模式下的盒模型</li>
+<li>盒子的（content）宽度+内边距padding+边框border 宽度= 我们设置的width（height也是如此）。</li>
+<li>盒子总宽度/高度=width/height +margin = 内容区宽度/高度+padding+border+margin.</li>
+</ul>
+</blockquote>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.box</span></span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">200</span>px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">200</span>px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span><span class="token number">20</span>px solid black<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span><span class="token number">50</span>px<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span><span class="token number">50</span>px<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span></code></pre>
+<h2 id="怪异盒模型和标准和模型的兼容性问题"><a href="#怪异盒模型和标准和模型的兼容性问题" class="headerlink" title="怪异盒模型和标准和模型的兼容性问题"></a>怪异盒模型和标准和模型的兼容性问题</h2><p>建议不要给元素添加具有指定宽度的内边距，而是尝试将内边距或外边距添加到元素的父元素和子元素</p>
+<h2 id="css-指定盒子模型的种类"><a href="#css-指定盒子模型的种类" class="headerlink" title="css 指定盒子模型的种类"></a>css 指定盒子模型的种类</h2><blockquote>
+<ul>
+<li><code>box-sizing</code> 属性允特定的方式定义匹配某个区域的特定的元素；</li>
+<li><code>box-sizing:content-box</code>//宽度和高度分别应用到元素的内容框，在宽度和高度之外绘制元素的内边距和边框；</li>
+<li><code>box-sizing:border-box</code>// 为元素设定的宽度和高度决定了元素的边框盒，也就说：为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制，通过从已设定的宽度和高度分别减去边框盒内边距才能得到内容的宽度和高度</li>
+<li><code>box-sizing:inherit</code>:// 规定应从父元素继承box-sizing属性值；</li>
+</ul>
+</blockquote>
+<p>box-sizing属性可以指定盒子模型种类：content-box指定盒子模型为W3C（标准和模型），border-box为IE盒子模型（怪异盒模型）</p>
 
             </div>
             <hr/>
@@ -1036,9 +990,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《delete的用法》
+                    《css 盒子模型》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/03/15/t-5/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/03/25/css-1/" property="cc:attributionName"
                rel="cc:attributionURL">
                 echo丶若梦
             </a> 采用
@@ -1079,7 +1033,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
         repo: 'ght5935.github.io',
         owner: 'ght5935',
         admin: "ght5935",
-        id: '2021-03-15T10-52-17',
+        id: '2021-03-25T14-36-35',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1100,46 +1054,50 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/03/16/t-6/">
+                <a href="/2021/03/25/css-1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="CommonJs和Es Module及它们的区别">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="css 盒子模型">
                         
-                        <span class="card-title">CommonJs和Es Module及它们的区别</span>
+                        <span class="card-title">css 盒子模型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            为什么会有CommonJs和Es Module呢我们都知道在早期JavaScript模块这一概念，都是通过script标签引入js文件代码。当然这写基本简单需求没有什么问题，但当我们的项目越来越庞大时，我们引入的js文件就会越多，这时就会出
+                            css 盒子模型（box model）
+
+所有的html元素都可以看作盒子，在css中，”box model” 这一术语是用来布局的时候用的；css 盒子模型本质就是一个盒子，封装周围的html元素，他包括:外边距margin,边框（bod
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-25
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/每日一题/" class="post-category">
-                                    每日一题
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            echo丶若梦
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/js/">
-                        <span class="chip bg-color">js</span>
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">css</span>
+                    </a>
+                    
+                    <a href="/tags/每日一题/">
+                        <span class="chip bg-color">每日一题</span>
                     </a>
                     
                 </div>
@@ -1153,36 +1111,33 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/14/write-0/">
+                <a href="/2021/03/24/js-12/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="手写一个🍏🍏🍏">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="闭包">
                         
-                        <span class="card-title">手写一个🍏🍏🍏</span>
+                        <span class="card-title">闭包</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            写一个call🍏模拟一个call方法查看
-Function.prototype.myCall = function (context) {
-     // 挂在一个fn函数
-    var context = context || win
+                            闭包是什么
+
+在 JS 忍者秘籍(P90)中对闭包的定义：闭包允许函数访问并操作函数外部的变量。
+红宝书上对于闭包的定义：闭包是指有权访问另外一个函数作用域中的变量的函数。
+MDN 对闭包的定义为：闭包是指那些能够访问自由变量的函数。这里的
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-14
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-24
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/手写系列🍏/" class="post-category">
-                                    手写系列🍏
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            echo丶若梦
                             
                         </span>
                     </div>
@@ -1190,8 +1145,8 @@ Function.prototype.myCall = function (context) {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/手写系列🍏/">
-                        <span class="chip bg-color">手写系列🍏</span>
+                    <a href="/tags/js/">
+                        <span class="chip bg-color">js</span>
                     </a>
                     
                 </div>
