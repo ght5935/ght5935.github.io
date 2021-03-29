@@ -4,10 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="css 盒子模型, echo丶若梦">
-    <meta name="description" content="css 盒子模型（box model）
-
-所有的html元素都可以看作盒子，在css中，”box model” 这一术语是用来布局的时候用的；css 盒子模型本质就是一个盒子，封装周围的html元素，他包括:外边距margin,边框（bod">
+    <meta name="keywords" content="写一个柯里化, echo丶若梦">
+    <meta name="description" content="柯里化🍏柯里化通常也称部分求值，其含义是给函数分步传递参数，每次传递参数后部分应用参数，并返回一个更具体的函数接受剩下的参数，这中间可嵌套多层这样的接受部分参数函数，直至返回最后结果。如果要实现下面这个方法:add(1, 2)(3)(4)">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>css 盒子模型 | echo丶若梦</title>
+    <title>写一个柯里化 | echo丶若梦</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -621,13 +619,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        css 盒子模型
+                        写一个柯里化
                     </div>
                 </div>
             </div>
@@ -739,12 +737,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/css/">
-                                <span class="chip bg-color">css</span>
-                            </a>
-                        
-                            <a href="/tags/每日一题/">
-                                <span class="chip bg-color">每日一题</span>
+                            <a href="/tags/js/">
+                                <span class="chip bg-color">js</span>
                             </a>
                         
                     </div>
@@ -752,27 +746,36 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/手写系列🍏/" class="post-category">
+                                手写系列🍏
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-25
+                    2021-03-29
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        602
+                        273
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -788,49 +791,24 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="css-盒子模型（box-model）"><a href="#css-盒子模型（box-model）" class="headerlink" title="css 盒子模型（box model）"></a>css 盒子模型（box model）</h2><blockquote>
-<ul>
-<li>所有的html元素都可以看作盒子，在css中，”box model” 这一术语是用来布局的时候用的；css 盒子模型本质就是一个盒子，封装周围的html元素，他包括:外边距<code>margin</code>,边框（<code>boder</code>）,内边距（<code>padding</code>）， 实际内容（<code>content</code>）这四个属性</li>
-</ul>
-</blockquote>
-<h2 id="W3C盒子模型（标准盒子模型）和IE盒子模型（怪异盒模型）"><a href="#W3C盒子模型（标准盒子模型）和IE盒子模型（怪异盒模型）" class="headerlink" title="W3C盒子模型（标准盒子模型）和IE盒子模型（怪异盒模型）"></a>W3C盒子模型（标准盒子模型）和IE盒子模型（怪异盒模型）</h2><h3 id="标准盒子模型"><a href="#标准盒子模型" class="headerlink" title="标准盒子模型"></a>标准盒子模型</h3><blockquote>
-<ul>
-<li>元素的内容占据的空间是由width属性设置的，而内容周围的padding和border值是另外计算的，即在标准模式下的盒模型</li>
-<li>盒子实际内容（content）的width/height=我们设置的width/height</li>
-<li>盒子总宽度/高度=width/height+padding+border+margin。</li>
-</ul>
-</blockquote>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.box</span></span><span class="token punctuation">{</span>
-  <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">200</span>px<span class="token punctuation">;</span>
-  <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">200</span>px<span class="token punctuation">;</span>
-  <span class="token property">border</span><span class="token punctuation">:</span><span class="token number">20</span>px solid black<span class="token punctuation">;</span>
-  <span class="token property">padding</span><span class="token punctuation">:</span><span class="token number">50</span>px<span class="token punctuation">;</span>
-  <span class="token property">margin</span><span class="token punctuation">:</span><span class="token number">50</span>px<span class="token punctuation">;</span>
- <span class="token punctuation">}</span></code></pre>
-<h3 id="IE盒子模型（怪异盒模型）"><a href="#IE盒子模型（怪异盒模型）" class="headerlink" title="IE盒子模型（怪异盒模型）"></a>IE盒子模型（怪异盒模型）</h3><blockquote>
-<ul>
-<li>在怪异盒模型的情况下，浏览器的width属性不是内容的宽度，而是内容，内边距和边框的宽度的总和，即使在怪异模式下的盒模型</li>
-<li>盒子的（content）宽度+内边距padding+边框border 宽度= 我们设置的width（height也是如此）。</li>
-<li>盒子总宽度/高度=width/height +margin = 内容区宽度/高度+padding+border+margin.</li>
-</ul>
-</blockquote>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.box</span></span><span class="token punctuation">{</span>
-  <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">200</span>px<span class="token punctuation">;</span>
-  <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">200</span>px<span class="token punctuation">;</span>
-  <span class="token property">border</span><span class="token punctuation">:</span><span class="token number">20</span>px solid black<span class="token punctuation">;</span>
-  <span class="token property">padding</span><span class="token punctuation">:</span><span class="token number">50</span>px<span class="token punctuation">;</span>
-  <span class="token property">margin</span><span class="token punctuation">:</span><span class="token number">50</span>px<span class="token punctuation">;</span>
- <span class="token punctuation">}</span></code></pre>
-<h2 id="怪异盒模型和标准和模型的兼容性问题"><a href="#怪异盒模型和标准和模型的兼容性问题" class="headerlink" title="怪异盒模型和标准和模型的兼容性问题"></a>怪异盒模型和标准和模型的兼容性问题</h2><p>建议不要给元素添加具有指定宽度的内边距，而是尝试将内边距或外边距添加到元素的父元素和子元素</p>
-<h2 id="css-指定盒子模型的种类"><a href="#css-指定盒子模型的种类" class="headerlink" title="css 指定盒子模型的种类"></a>css 指定盒子模型的种类</h2><blockquote>
-<ul>
-<li><code>box-sizing</code> 属性允特定的方式定义匹配某个区域的特定的元素；</li>
-<li><code>box-sizing:content-box</code>//宽度和高度分别应用到元素的内容框，在宽度和高度之外绘制元素的内边距和边框；</li>
-<li><code>box-sizing:border-box</code>// 为元素设定的宽度和高度决定了元素的边框盒，也就说：为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制，通过从已设定的宽度和高度分别减去边框盒内边距才能得到内容的宽度和高度</li>
-<li><code>box-sizing:inherit</code>:// 规定应从父元素继承box-sizing属性值；</li>
-</ul>
-</blockquote>
-<p>box-sizing属性可以指定盒子模型种类：content-box指定盒子模型为W3C（标准和模型），border-box为IE盒子模型（怪异盒模型）</p>
+                <h2 id="柯里化🍏"><a href="#柯里化🍏" class="headerlink" title="柯里化🍏"></a>柯里化🍏</h2><p>柯里化通常也称部分求值，其含义是给函数分步传递参数，每次传递参数后部分应用参数，并返回一个更具体的函数接受剩下的参数，这中间可嵌套多层这样的接受部分参数函数，直至返回最后结果。<br>如果要实现下面这个方法:<br><code>add(1, 2)(3)(4)(5, 6, 7)(9)()</code><br>上面这个函数当参数为空的时候执行了内部参数所有值的相加，所以我们应该考虑当参数不为空的时候将缓存起来，在为空的时候再相加，这样的思路会用闭包的方式来实现。下面是实现方法：</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 缓存所有的arguments值</span>
+    <span class="token keyword">let</span> args <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>arguments<span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true">// 新建fn函数实现柯里化</span>
+    <span class="token keyword">let</span> fn <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 如果参数为空，那么递归停止，返回执行结果</span>
+         <span class="token keyword">if</span> <span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+             <span class="token keyword">return</span> args<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> a <span class="token operator">+</span> b<span class="token punctuation">)</span>
+         <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+             <span class="token comment" spellcheck="true">// 否则将参数保存到args里面，返回fn方法</span>
+             args<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span>arguments<span class="token punctuation">)</span>
+             <span class="token keyword">return</span> fn
+         <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> fn
+<span class="token punctuation">}</span>
+<span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 37</span></code></pre>
 
             </div>
             <hr/>
@@ -990,9 +968,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《css 盒子模型》
+                    《写一个柯里化》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/03/25/css-1/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/03/29/write-1/" property="cc:attributionName"
                rel="cc:attributionURL">
                 echo丶若梦
             </a> 采用
@@ -1033,7 +1011,7 @@
         repo: 'ght5935.github.io',
         owner: 'ght5935',
         admin: "ght5935",
-        id: '2021-03-25T14-36-35',
+        id: '2021-03-29T10-20-35',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1054,9 +1032,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/03/29/write-1/">
                     <div class="card-image">
@@ -1074,9 +1053,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1089,6 +1068,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1107,28 +1087,26 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/24/js-12/">
+                <a href="/2021/03/25/css-1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="闭包">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="css 盒子模型">
                         
-                        <span class="card-title">闭包</span>
+                        <span class="card-title">css 盒子模型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            闭包是什么
+                            css 盒子模型（box model）
 
-在 JS 忍者秘籍(P90)中对闭包的定义：闭包允许函数访问并操作函数外部的变量。
-红宝书上对于闭包的定义：闭包是指有权访问另外一个函数作用域中的变量的函数。
-MDN 对闭包的定义为：闭包是指那些能够访问自由变量的函数。这里的
+所有的html元素都可以看作盒子，在css中，”box model” 这一术语是用来布局的时候用的；css 盒子模型本质就是一个盒子，封装周围的html元素，他包括:外边距margin,边框（bod
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-25
                             </span>
                         <span class="publish-author">
                             
@@ -1141,8 +1119,12 @@ MDN 对闭包的定义为：闭包是指那些能够访问自由变量的函数�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/js/">
-                        <span class="chip bg-color">js</span>
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">css</span>
+                    </a>
+                    
+                    <a href="/tags/每日一题/">
+                        <span class="chip bg-color">每日一题</span>
                     </a>
                     
                 </div>

@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>写一个柯里化</title>
+      <link href="/2021/03/29/write-1/"/>
+      <url>/2021/03/29/write-1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="柯里化🍏"><a href="#柯里化🍏" class="headerlink" title="柯里化🍏"></a>柯里化🍏</h2><p>柯里化通常也称部分求值，其含义是给函数分步传递参数，每次传递参数后部分应用参数，并返回一个更具体的函数接受剩下的参数，这中间可嵌套多层这样的接受部分参数函数，直至返回最后结果。<br>如果要实现下面这个方法:<br><code>add(1, 2)(3)(4)(5, 6, 7)(9)()</code><br>上面这个函数当参数为空的时候执行了内部参数所有值的相加，所以我们应该考虑当参数不为空的时候将缓存起来，在为空的时候再相加，这样的思路会用闭包的方式来实现。下面是实现方法：</p><pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token comment" spellcheck="true">// 缓存所有的arguments值</span>    <span class="token keyword">let</span> args <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>arguments<span class="token punctuation">]</span>    <span class="token comment" spellcheck="true">// 新建fn函数实现柯里化</span>    <span class="token keyword">let</span> fn <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>            <span class="token comment" spellcheck="true">// 如果参数为空，那么递归停止，返回执行结果</span>         <span class="token keyword">if</span> <span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>             <span class="token keyword">return</span> args<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> a <span class="token operator">+</span> b<span class="token punctuation">)</span>         <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>             <span class="token comment" spellcheck="true">// 否则将参数保存到args里面，返回fn方法</span>             args<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span>arguments<span class="token punctuation">)</span>             <span class="token keyword">return</span> fn         <span class="token punctuation">}</span>    <span class="token punctuation">}</span>    <span class="token keyword">return</span> fn<span class="token punctuation">}</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 37</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 手写系列🍏 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>css 盒子模型</title>
       <link href="/2021/03/25/css-1/"/>
       <url>/2021/03/25/css-1/</url>
