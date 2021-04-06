@@ -660,19 +660,10 @@
                 </a>
                 
                 
-                <a href="/categories/Js/" title="Js: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #F5EEF8;">Js
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/app/" title="app: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">app
+                            style="background-color: #F5EEF8;">app
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -681,17 +672,26 @@
                 <a href="/categories/hexo/" title="hexo: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #E8F8F5;">hexo
+                            style="background-color: #D5F5E3;">hexo
                         <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/碎碎念/" title="碎碎念: 1">
+                <a href="/categories/Js/" title="Js: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            style="background-color: #E8F8F5;">Js
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/面试题/" title="面试题: 8">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #FEF9E7;">碎碎念
-                        <span class="tag-length">1</span>
+                            style="background-color: #FEF9E7;">面试题
+                        <span class="tag-length">8</span>
                     </span>
                 </a>
                 
@@ -705,11 +705,11 @@
                 </a>
                 
                 
-                <a href="/categories/面试题/" title="面试题: 8">
+                <a href="/categories/碎碎念/" title="碎碎念: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #82E0AA;">面试题
-                        <span class="tag-length">8</span>
+                            style="background-color: #82E0AA;">碎碎念
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -732,29 +732,29 @@
                 </a>
                 
                 
-                <a href="/categories/node/" title="node: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #85C1E9;">node
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/react/" title="react: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F8C471;">react
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/网站优化/" title="网站优化: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9E79F;">网站优化
+                            style="background-color: #85C1E9;">网站优化
                         <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/node/" title="node: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8C471;">node
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/react/" title="react: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9E79F;">react
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -850,7 +850,7 @@
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">51.2k</span>&nbsp;字
+                class="white-color">51.6k</span>&nbsp;字
             
             
             
@@ -993,6 +993,88 @@ $(function () {
     var windowWidth = $(window).width();
     if (windowWidth > 768) {
         document.write('<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"><"/"script>');
+    } 
+</script>
+
+    
+    
+
+    <!-- 雪花 -->
+    
+    <script type="text/javascript">
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) { document.write('<script type="text/javascript" src="/js/snow.js"><"/"script>') }
+    </script>
+    
+
+    <!-- 樱花效果 -->
+    
+    <script type="text/javascript">
+        //只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        if (window.location.href == 'https://ght5935.github.io/') {
+            if (windowWidth > 768) { document.write('<script type="text/javascript" src="/js/sakura.js"><"/"script>') }
+        }
+    </script>
+    
+
+    <script type="text/javascript">
+        var OriginTitile = document.title, st;
+        document.addEventListener("visibilitychange", function () {
+            document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title = "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () { document.title = OriginTitile }, 3e3))
+        }) 
+    </script>
+
+    <!-- 鼠标滑过/ mac不支持 -->
+    
+    <script type="text/javascript">
+        let isMac = /macintosh|mac os x/i.test(navigator.userAgent);
+        if (!isMac) {
+            document.write('<script type="text/javascript" src="/js/mouseSlip.js"><"/"script>')
+        }
+    </script>
+    
+
+    <!-- 在线聊天工具  -->
+    
+
+    
+    <script>
+            (function (i, s, o, g, r, a, m) {
+                i["DaoVoiceObject"] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments);
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                a.charset = "utf-8";
+                m.parentNode.insertBefore(a, m)
+            })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+                "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: ""
+        });
+        daovoice('update');
+    </script>
+    
+
+    <!-- 
+
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+     -->
+
+    
+
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+
+</html>ipt" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"><"/"script>');
     } 
 </script>
 
