@@ -1133,13 +1133,13 @@
     e.default = r;
   },
   function (t, e, i) {
-    t.exports = i.p + "medias/me/bg2.jpg";
+    t.exports = i.p + "/medias/me/bg2.jpg";
   },
   function (t, e, i) {
-    t.exports = i.p + "medias/me/musicon.png";
+    t.exports = i.p + "/medias/me/musicon.png";
   },
   function (t, e, i) {
-    t.exports = i.p + "medias/me/musicoff.png";
+    t.exports = i.p + "/medias/me/musicoff.png";
   },
   function (t, e, i) {
     "use strict";
