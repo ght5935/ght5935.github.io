@@ -681,9 +681,7 @@
                   (e.imgs = e.dealImgs(t)),
                   e.init();
               })
-              .catch(function (t) {
-                console.log(t);
-              });
+              .catch(function (t) {});
         }
         return (
           o(t, [
@@ -691,8 +689,13 @@
               key: "initAudio",
               value: function () {
                 var t = new Audio();
-                (t.src = i(17)), (t.loop = !0), t.play(), (t.volume = 0.5);
+                (t.src = i(17)),
+                  (t.loop = !0),
+                  (t.volume = 0.5),
+                  (t.autoplay = true),
+                  console.log(t, "t");
                 var e = document.querySelector("#music");
+
                 document.addEventListener(
                   "WeixinJSBridgeReady",
                   function () {
